@@ -1,6 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cyetql624dmdg"]
-
-[ext_resource type="Script" path="res://main.gd" id="1_0xm2m"]
+[gd_scene load_steps=6 format=3 uid="uid://dikc2krvceeil"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1bvp3"]
 font_size = 150
@@ -21,7 +19,6 @@ font_color = Color(0, 0, 0, 1)
 size = Vector2(133, 61)
 
 [node name="MainMenu" type="Node2D"]
-script = ExtResource("1_0xm2m")
 
 [node name="Title" type="Label" parent="."]
 offset_left = 58.0
