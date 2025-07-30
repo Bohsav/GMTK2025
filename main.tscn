@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dikc2krvceeil"]
+[gd_scene load_steps=15 format=3 uid="uid://dikc2krvceeil"]
 
 [ext_resource type="Script" uid="uid://80uilknjrrus" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://783qsw5onqk0" path="res://Assets/smbtileset.png" id="1_ig7tw"]
@@ -173,8 +173,33 @@ font_color = Color(0, 0, 0, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
 size = Vector2(133, 61)
 
-[node name="MainMenu" type="Node2D"]
+[sub_resource type="LabelSettings" id="LabelSettings_h2yge"]
+font_size = 75
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(251, 58)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lquwl"]
+font_size = 75
+font_color = Color(0, 0, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7mycd"]
+font_size = 75
+font_color = Color(0, 0, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_272bh"]
+font_size = 75
+font_color = Color(0, 0, 1, 1)
+
+[node name="Main" type="Node2D" node_paths=PackedStringArray("start2", "start", "exit", "exit2", "credits", "credits2")]
 script = ExtResource("1_0xm2m")
+start2 = NodePath("Start2")
+start = NodePath("Start")
+exit = NodePath("Exit")
+exit2 = NodePath("Exit2")
+credits = NodePath("Credits")
+credits2 = NodePath("Credits2")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_h2yge")
@@ -219,5 +244,76 @@ horizontal_alignment = 1
 position = Vector2(256.5, 54.5)
 shape = SubResource("RectangleShape2D_h2yge")
 
+[node name="Credits" type="Label" parent="."]
+offset_left = 451.0
+offset_top = 498.0
+offset_right = 708.0
+offset_bottom = 601.0
+text = "Credits"
+label_settings = SubResource("LabelSettings_h2yge")
+
+[node name="creditsbox" type="Area2D" parent="Credits"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Credits/creditsbox"]
+position = Vector2(129.5, 53)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="Start2" type="Label" parent="."]
+visible = false
+offset_left = 492.0
+offset_top = 308.0
+offset_right = 668.0
+offset_bottom = 411.0
+text = "Start"
+label_settings = SubResource("LabelSettings_lquwl")
+
+[node name="Area2D" type="Area2D" parent="Start2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Start2/Area2D"]
+position = Vector2(93, 55)
+shape = SubResource("RectangleShape2D_0xm2m")
+
+[node name="Exit2" type="Label" parent="."]
+visible = false
+offset_left = 504.0
+offset_top = 404.0
+offset_right = 638.0
+offset_bottom = 507.0
+text = "Exit"
+label_settings = SubResource("LabelSettings_7mycd")
+horizontal_alignment = 1
+
+[node name="exitbox" type="Area2D" parent="Exit2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit2/exitbox"]
+position = Vector2(71, 55)
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Credits2" type="Label" parent="."]
+visible = false
+offset_left = 451.0
+offset_top = 498.0
+offset_right = 708.0
+offset_bottom = 601.0
+text = "Credits"
+label_settings = SubResource("LabelSettings_272bh")
+horizontal_alignment = 1
+
+[node name="creditsbox" type="Area2D" parent="Credits2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Credits2/creditsbox"]
+position = Vector2(129.5, 53)
+shape = SubResource("RectangleShape2D_1bvp3")
+
 [connection signal="input_event" from="Start/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Start/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Start/Area2D" to="." method="_on_area_2d_mouse_exited"]
 [connection signal="input_event" from="Exit/exitbox" to="." method="_on_exitbox_input_event"]
+[connection signal="mouse_entered" from="Exit/exitbox" to="." method="_on_exitbox_mouse_entered"]
+[connection signal="mouse_exited" from="Exit/exitbox" to="." method="_on_exitbox_mouse_exited"]
+[connection signal="input_event" from="Credits/creditsbox" to="." method="_on_creditsbox_input_event"]
+[connection signal="mouse_entered" from="Credits/creditsbox" to="." method="_on_creditsbox_mouse_entered"]
+[connection signal="mouse_exited" from="Credits/creditsbox" to="." method="_on_creditsbox_mouse_exited"]
+[connection signal="input_event" from="Start2/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Start2/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="input_event" from="Exit2/exitbox" to="." method="_on_exitbox_input_event"]
