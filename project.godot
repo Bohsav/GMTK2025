@@ -12,6 +12,10 @@ config_version=5
 
 config/name="GMTK_Game_jam_2025"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+run/main_scene="uid://bcormhs6omobr"
+>>>>>>> Stashed changes
 =======
 run/main_scene="uid://bcormhs6omobr"
 >>>>>>> Stashed changes
@@ -67,4 +71,7 @@ jump={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
