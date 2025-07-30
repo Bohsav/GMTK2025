@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dikc2krvceeil"]
+[gd_scene load_steps=10 format=3 uid="uid://dikc2krvceeil"]
 
 [ext_resource type="Script" uid="uid://80uilknjrrus" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://783qsw5onqk0" path="res://Assets/smbtileset.png" id="1_ig7tw"]
@@ -163,9 +163,15 @@ font_color = Color(0, 0, 0, 1)
 font_size = 75
 font_color = Color(0, 0, 0, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
+size = Vector2(179, 63)
+
 [sub_resource type="LabelSettings" id="LabelSettings_0xm2m"]
 font_size = 75
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
+size = Vector2(133, 61)
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_0xm2m")
@@ -188,15 +194,30 @@ offset_left = 309.0
 offset_top = 308.0
 offset_right = 852.0
 offset_bottom = 411.0
-text = "Press 1 to start"
+text = "Start"
 label_settings = SubResource("LabelSettings_ig7tw")
 horizontal_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="Start"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Start/Area2D"]
+position = Vector2(275.5, 54.5)
+shape = SubResource("RectangleShape2D_0xm2m")
 
 [node name="Exit" type="Label" parent="."]
 offset_left = 318.0
 offset_top = 404.0
 offset_right = 824.0
 offset_bottom = 507.0
-text = "Press 2 to exit"
+text = "Exit"
 label_settings = SubResource("LabelSettings_0xm2m")
 horizontal_alignment = 1
+
+[node name="exitbox" type="Area2D" parent="Exit"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit/exitbox"]
+position = Vector2(256.5, 54.5)
+shape = SubResource("RectangleShape2D_h2yge")
+
+[connection signal="input_event" from="Start/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="input_event" from="Exit/exitbox" to="." method="_on_exitbox_input_event"]
