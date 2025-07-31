@@ -1,24 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://dikc2krvceeil"]
+[gd_scene load_steps=3 format=3 uid="uid://dikc2krvceeil"]
+
+[ext_resource type="Script" uid="uid://80uilknjrrus" path="res://Scenes/UI/MainMenu_script.gd" id="1_g18y6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1bvp3"]
 font_size = 150
 font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_ig7tw"]
-font_size = 75
-font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
-size = Vector2(179, 63)
-
-[sub_resource type="LabelSettings" id="LabelSettings_0xm2m"]
-font_size = 75
-font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
-size = Vector2(133, 61)
-
 [node name="MainMenu" type="Node2D"]
+script = ExtResource("1_g18y6")
 
 [node name="Title" type="Label" parent="."]
 offset_left = 58.0
@@ -28,35 +17,19 @@ offset_bottom = 286.0
 text = "Waking Dream"
 label_settings = SubResource("LabelSettings_1bvp3")
 
-[node name="Start" type="Label" parent="."]
-offset_left = 309.0
+[node name="Start" type="Button" parent="."]
+offset_left = 333.0
 offset_top = 308.0
-offset_right = 852.0
-offset_bottom = 411.0
+offset_right = 810.0
+offset_bottom = 390.0
 text = "Start"
-label_settings = SubResource("LabelSettings_ig7tw")
-horizontal_alignment = 1
 
-[node name="Area2D" type="Area2D" parent="Start"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Start/Area2D"]
-position = Vector2(275.5, 54.5)
-shape = SubResource("RectangleShape2D_0xm2m")
-
-[node name="Exit" type="Label" parent="."]
-offset_left = 318.0
+[node name="Exit" type="Button" parent="."]
+offset_left = 334.0
 offset_top = 404.0
-offset_right = 824.0
-offset_bottom = 507.0
+offset_right = 808.0
+offset_bottom = 492.0
 text = "Exit"
-label_settings = SubResource("LabelSettings_0xm2m")
-horizontal_alignment = 1
 
-[node name="exitbox" type="Area2D" parent="Exit"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit/exitbox"]
-position = Vector2(256.5, 54.5)
-shape = SubResource("RectangleShape2D_h2yge")
-
-[connection signal="input_event" from="Start/Area2D" to="." method="_on_area_2d_input_event"]
-[connection signal="input_event" from="Exit/exitbox" to="." method="_on_exitbox_input_event"]
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
