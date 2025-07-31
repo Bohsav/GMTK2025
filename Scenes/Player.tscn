@@ -1,12 +1,14 @@
 [gd_scene load_steps=7 format=3 uid="uid://lsjg54jifttk"]
 
-[ext_resource type="Script" uid="uid://cr1x03aym8sob" path="res://Scenes/Player/Player.gd" id="1_s0eop"]
+[ext_resource type="Script" uid="uid://cr1x03aym8sob" path="res://Scenes/Player.gd" id="1_s0eop"]
 [ext_resource type="PackedScene" uid="uid://bjjmbb5cj4oaw" path="res://Scenes/Modules/Player/CharacterMovementModule.tscn" id="2_ft8w5"]
 [ext_resource type="PackedScene" uid="uid://dgcmj6dxwif50" path="res://Scenes/Modules/Player/InputModule.tscn" id="3_h54ih"]
 [ext_resource type="PackedScene" uid="uid://bdfphhvinuypa" path="res://Scenes/Modules/GravityModule.tscn" id="3_jmcll"]
 [ext_resource type="PackedScene" uid="uid://csrh10xtccq6k" path="res://Assets/Test/PlayerSprites.tscn" id="5_jmcll"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ft8w5"]
+radius = 6.0
+height = 20.0
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_s0eop")
@@ -20,6 +22,9 @@ script = ExtResource("1_s0eop")
 [node name="PlayerBody" type="CharacterBody2D" parent="."]
 
 [node name="PlayerSprites" parent="PlayerBody" instance=ExtResource("5_jmcll")]
+position = Vector2(0, -12)
+scale = Vector2(1, 0.9375)
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="PlayerBody"]
+position = Vector2(0, -10)
 shape = SubResource("CapsuleShape2D_ft8w5")
