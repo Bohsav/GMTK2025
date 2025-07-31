@@ -1,16 +1,16 @@
 [gd_scene load_steps=8 format=4 uid="uid://dyltwnfekx7mr"]
 
-[ext_resource type="PackedScene" uid="uid://lsjg54jifttk" path="res://Scenes/Player.tscn" id="1_3hls8"]
-[ext_resource type="Script" uid="uid://drp21edqukjdu" path="res://LevelRoom.gd" id="1_ihfcg"]
-[ext_resource type="Texture2D" uid="uid://c6d7nmh0qa1ml" path="res://Assets/Test/Tilesets/oak_woods_tileset.png" id="2_hbghi"]
-[ext_resource type="PackedScene" uid="uid://bkaffxphhql0u" path="res://Scenes/Objects/Chair.tscn" id="2_hn12h"]
+[ext_resource type="Script" uid="uid://drp21edqukjdu" path="res://LevelRoom.gd" id="1_rf6l5"]
+[ext_resource type="PackedScene" uid="uid://lsjg54jifttk" path="res://Scenes/Player.tscn" id="2_syshm"]
+[ext_resource type="PackedScene" uid="uid://bkaffxphhql0u" path="res://Scenes/Objects/Chair.tscn" id="3_rfktq"]
+[ext_resource type="Texture2D" uid="uid://c6d7nmh0qa1ml" path="res://Assets/Test/Tilesets/oak_woods_tileset.png" id="4_0urlm"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_3hls8"]
 a = Vector2(0, 28)
 b = Vector2(54, 28)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hn12h"]
-texture = ExtResource("2_hbghi")
+texture = ExtResource("4_0urlm")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -431,13 +431,13 @@ terrain_set_0/mode = 0
 sources/0 = SubResource("TileSetAtlasSource_hn12h")
 
 [node name="Level1" type="Node2D"]
-script = ExtResource("1_ihfcg")
+script = ExtResource("1_rf6l5")
 
-[node name="Player" parent="." instance=ExtResource("1_3hls8")]
+[node name="Player" parent="." instance=ExtResource("2_syshm")]
 position = Vector2(15, 24)
 jump_power = 150
 
-[node name="Chair" parent="." instance=ExtResource("2_hn12h")]
+[node name="Chair" parent="." instance=ExtResource("3_rfktq")]
 position = Vector2(158, 31)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
