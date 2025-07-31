@@ -27,10 +27,10 @@ func _process(delta: float) -> void:
 	if is_loading:
 		ResourceLoader.load_threaded_get_status(loading_scene, loading_progress)
 		if loading_progress[0] >= 1:
+			is_loading = false
 			await get_tree().create_timer(2).timeout 
 			get_tree().change_scene_to_packed(ResourceLoader.load_threaded_get(loading_scene))
 			current_scene = ResourceLoader.load_threaded_get(loading_scene)
-			is_loading = false
 	
 func level_end() -> void:
 	level_count = level_count + 1
