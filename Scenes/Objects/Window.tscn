@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bl0ot8wc67bjx"]
+[gd_scene load_steps=4 format=3 uid="uid://c6knq4lv265ip"]
 
-[ext_resource type="Texture2D" uid="uid://cyydtmex8ocxg" path="res://Assets/Object/window_2.png" id="1_eretk"]
+[ext_resource type="Texture2D" uid="uid://cf4usoijofkoh" path="res://Assets/Object/window.png" id="1_eretk"]
 
 [sub_resource type="GDScript" id="GDScript_nic05"]
 script/source = "extends ObjectBase

@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c36ton7cf5jet"]
+[gd_scene load_steps=4 format=3 uid="uid://cftl3mquytuwt"]
 
-[ext_resource type="Texture2D" uid="uid://ct4dn3w4tu2ya" path="res://Assets/Object/Dark_Coat_hanger.png" id="1_lpmbk"]
+[ext_resource type="Texture2D" uid="uid://bvy0ne2mh7r3o" path="res://Assets/Object/Coay_hanger-export.png" id="1_tbmns"]
 
 [sub_resource type="GDScript" id="GDScript_nic05"]
 script/source = "extends ObjectBase
@@ -12,11 +12,11 @@ func on_interact() -> void:
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iobnl"]
 size = Vector2(18, 57)
 
-[node name="CoatHanger" type="Node2D"]
+[node name="DarkCoatHanger" type="Node2D"]
 script = SubResource("GDScript_nic05")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_lpmbk")
+texture = ExtResource("1_tbmns")
 
 [node name="Area2D" type="Area2D" parent="."]
 

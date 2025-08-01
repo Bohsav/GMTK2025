@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://wkebjf1d8chi" path="res://Scenes/Objects/Bed.tscn" id="4_xgxfi"]
 [ext_resource type="PackedScene" uid="uid://bmkq8s4q6jcoa" path="res://Scenes/Objects/ExitObject.tscn" id="5_cyadu"]
 [ext_resource type="Shader" uid="uid://ccfmdcblj1h4l" path="res://Assets/Shaders/Vignette.gdshader" id="6_5f3p6"]
-[ext_resource type="PackedScene" uid="uid://bl0ot8wc67bjx" path="res://Scenes/Objects/Window.tscn" id="7_5f3p6"]
+[ext_resource type="PackedScene" uid="uid://bl0ot8wc67bjx" path="res://Scenes/Objects/Window2.tscn" id="7_5f3p6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cyadu"]
 texture = ExtResource("4_iixi8")
@@ -1662,7 +1662,7 @@ position = Vector2(194, 78)
 [node name="Bed" parent="." instance=ExtResource("4_xgxfi")]
 position = Vector2(71, 86)
 
-[node name="Window" parent="." instance=ExtResource("7_5f3p6")]
+[node name="Window2" parent="." instance=ExtResource("7_5f3p6")]
 position = Vector2(83, 65)
 scale = Vector2(0.8, 0.8)
 
