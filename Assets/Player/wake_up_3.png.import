@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn6i338cy46ty"
-path="res://.godot/imported/transparent.png-cf6cfe1ab5608990275f4758fdfadb46.ctex"
+uid="uid://s28qn81x0vs3"
+path="res://.godot/imported/wake_up_3.png-8d93ddd5a7908217f9275f2d296b7635.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/transparent.png"
-dest_files=["res://.godot/imported/transparent.png-cf6cfe1ab5608990275f4758fdfadb46.ctex"]
+source_file="res://Assets/Player/wake_up_3.png"
+dest_files=["res://.godot/imported/wake_up_3.png-8d93ddd5a7908217f9275f2d296b7635.ctex"]
 
 [params]
 
@@ -25,7 +25,7 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
-process/fix_alpha_border=false
+process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
