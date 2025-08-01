@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkaffxphhql0u"]
+[gd_scene load_steps=5 format=3 uid="uid://bkaffxphhql0u"]
 
 [ext_resource type="Texture2D" uid="uid://d0bqi2e0cq2b7" path="res://Assets/Test/chair.png" id="1_12uth"]
 
@@ -13,6 +13,9 @@ func on_interact() -> void:
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iobnl"]
 size = Vector2(28, 32)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12uth"]
+size = Vector2(28, 14)
+
 [node name="Chair" type="Node2D"]
 script = SubResource("GDScript_nic05")
 
@@ -23,6 +26,13 @@ texture = ExtResource("1_12uth")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_iobnl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_12uth")
+one_way_collision = true
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
