@@ -1,0 +1,85 @@
+[gd_scene load_steps=11 format=3 uid="uid://i6kuw60qattu"]
+
+[ext_resource type="Script" uid="uid://dqhfpsbqftx6d" path="res://Scenes/UI/LoadingScreen_script.gd" id="1_xofxx"]
+[ext_resource type="Texture2D" uid="uid://bbhu11nc6ox55" path="res://Assets/Test/Loading/loading1.png" id="2_owfjg"]
+[ext_resource type="Texture2D" uid="uid://dl70ayftte0yn" path="res://Assets/Test/Loading/loading2.png" id="3_5oco6"]
+[ext_resource type="Texture2D" uid="uid://cafh6khfaxoe8" path="res://Assets/Test/Loading/loading3.png" id="4_wexqv"]
+[ext_resource type="Texture2D" uid="uid://bx3j7nb0wvt0o" path="res://Assets/Test/Loading/loading4.png" id="5_oa47d"]
+[ext_resource type="Texture2D" uid="uid://ck6x8tlqsnq8a" path="res://Assets/Test/Loading/loading5.png" id="6_l2h4m"]
+[ext_resource type="Texture2D" uid="uid://c3141jlkfote" path="res://Assets/Test/Loading/loading6.png" id="7_j6qye"]
+[ext_resource type="Texture2D" uid="uid://jlsxdrovr1jh" path="res://Assets/Test/Loading/loading7.png" id="8_7h3jc"]
+[ext_resource type="Texture2D" uid="uid://ecqu7tb4i1mo" path="res://Assets/Test/Loading/loading8.png" id="9_n42w4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_owfjg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_owfjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7h3jc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5oco6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wexqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_oa47d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_l2h4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_j6qye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_n42w4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="LoadingScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xofxx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.0336, 0.03824, 0.08, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="AnimatedContainer" type="PanelContainer" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/MarginContainer/VBoxContainer/AnimatedContainer"]
+position = Vector2(1, 2)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_owfjg")
+autoplay = "default"
+frame_progress = 0.594275

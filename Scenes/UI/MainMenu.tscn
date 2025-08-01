@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://dikc2krvceeil"]
+
+[ext_resource type="Script" uid="uid://80uilknjrrus" path="res://Scenes/UI/MainMenu_script.gd" id="1_g18y6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1bvp3"]
+font_size = 150
+font_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_g18y6")
+
+[node name="Title" type="Label" parent="."]
+offset_left = 58.0
+offset_top = 81.0
+offset_right = 1124.0
+offset_bottom = 286.0
+text = "Waking Dream"
+label_settings = SubResource("LabelSettings_1bvp3")
+
+[node name="Start" type="Button" parent="."]
+offset_left = 333.0
+offset_top = 308.0
+offset_right = 810.0
+offset_bottom = 390.0
+text = "Start"
+
+[node name="Exit" type="Button" parent="."]
+offset_left = 334.0
+offset_top = 404.0
+offset_right = 808.0
+offset_bottom = 492.0
+text = "Exit"
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
