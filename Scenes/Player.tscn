@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://lsjg54jifttk"]
+[gd_scene load_steps=13 format=3 uid="uid://lsjg54jifttk"]
 
 [ext_resource type="Script" uid="uid://cr1x03aym8sob" path="res://Scenes/Player.gd" id="1_s0eop"]
 [ext_resource type="PackedScene" uid="uid://bjjmbb5cj4oaw" path="res://Scenes/Modules/Player/CharacterMovementModule.tscn" id="2_ft8w5"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://csrh10xtccq6k" path="res://Assets/Test/PlayerSprites.tscn" id="5_jmcll"]
 [ext_resource type="Texture2D" uid="uid://bp8mihlkmtkpr" path="res://Assets/Test/sad_lady.png" id="6_52ee3"]
 [ext_resource type="Texture2D" uid="uid://ceslwv1h2ek3g" path="res://Assets/dust_particle.png" id="6_nn08x"]
+[ext_resource type="Script" uid="uid://douhs7okere04" path="res://Scenes/Modules/Camera/CameraController.gd" id="8_bhhdu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bhhdu"]
 animations = [{
@@ -67,3 +68,8 @@ initial_velocity_min = 20.0
 initial_velocity_max = 20.0
 scale_amount_curve = SubResource("Curve_nn08x")
 color_ramp = SubResource("Gradient_52ee3")
+
+[node name="Camera2D" type="Camera2D" parent="PlayerBody"]
+position = Vector2(0, -24)
+zoom = Vector2(4, 4)
+script = ExtResource("8_bhhdu")

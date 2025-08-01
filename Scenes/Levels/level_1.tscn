@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=4 uid="uid://dyltwnfekx7mr"]
+[gd_scene load_steps=10 format=4 uid="uid://dyltwnfekx7mr"]
 
 [ext_resource type="Script" uid="uid://drp21edqukjdu" path="res://LevelRoom.gd" id="1_rf6l5"]
 [ext_resource type="PackedScene" uid="uid://lsjg54jifttk" path="res://Scenes/Player.tscn" id="2_syshm"]
 [ext_resource type="PackedScene" uid="uid://bkaffxphhql0u" path="res://Scenes/Objects/Chair.tscn" id="3_rfktq"]
-[ext_resource type="Script" uid="uid://douhs7okere04" path="res://Scenes/Modules/Camera/CameraController.gd" id="4_5f3p6"]
 [ext_resource type="Texture2D" uid="uid://cr8r4qp3v6uoe" path="res://Assets/timesets.png" id="4_iixi8"]
 [ext_resource type="PackedScene" uid="uid://bmkq8s4q6jcoa" path="res://Scenes/Objects/ExitObject.tscn" id="5_cyadu"]
 [ext_resource type="Shader" uid="uid://ccfmdcblj1h4l" path="res://Assets/Shaders/Vignette.gdshader" id="6_5f3p6"]
@@ -1002,11 +1001,6 @@ position = Vector2(114, 96)
 jump_power = 150
 tile_map_layer = NodePath("../Ground")
 
-[node name="Camera2D" type="Camera2D" parent="Player/PlayerBody" index="3"]
-position = Vector2(0, -24)
-zoom = Vector2(4, 4)
-script = ExtResource("4_5f3p6")
-
 [node name="Chair" parent="." instance=ExtResource("3_rfktq")]
 position = Vector2(158, 81)
 
@@ -1033,5 +1027,3 @@ mouse_filter = 2
 mouse_force_pass_scroll_events = false
 color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
-
-[editable path="Player"]
