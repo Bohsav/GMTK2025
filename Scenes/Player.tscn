@@ -1,5 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://lsjg54jifttk"]
 
+
 [ext_resource type="Script" uid="uid://cr1x03aym8sob" path="res://Scenes/Player.gd" id="1_s0eop"]
 [ext_resource type="PackedScene" uid="uid://bjjmbb5cj4oaw" path="res://Scenes/Modules/Player/CharacterMovementModule.tscn" id="2_ft8w5"]
 [ext_resource type="PackedScene" uid="uid://dgcmj6dxwif50" path="res://Scenes/Modules/Player/InputModule.tscn" id="3_h54ih"]
@@ -148,4 +149,5 @@ shape = SubResource("CapsuleShape2D_ft8w5")
 [node name="Camera2D" type="Camera2D" parent="PlayerBody"]
 position = Vector2(0, -27)
 zoom = Vector2(4.5, 4.5)
+
 script = ExtResource("8_bhhdu")

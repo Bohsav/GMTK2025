@@ -12,10 +12,12 @@ class_name Player
 
 @export var gravity := 400
 @export var speed := 40
+
 @export var run_speed := 70
 @export var jump_power := 200
 @export var distance_interact := 40
 @export var wake_up_time := 3
+
 @export var tile_map_layer : TileMapLayer
 
 @export var is_awake := false
