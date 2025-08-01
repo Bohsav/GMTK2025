@@ -1,0 +1,14 @@
+AnimatedSprite2D
+AudioStreamPlayer
+AnimationPlayer
+TextureRect
+CanvasLayer
+ColorRect
+Camera2D
+TileMapLayer
+CPUParticles2D
+Button
+MarginContainer
+PanelContainer
+VBoxContainer
+Panel

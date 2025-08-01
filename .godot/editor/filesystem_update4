@@ -1,0 +1,14 @@
+res://Scenes/Levels/level_1.tscn
+res://Assets/Shaders/Vignette.gdshader
+res://Scenes/Objects/ExitObject.tscn
+res://Scenes/Player.tscn
+res://Scenes/Objects/Bed.tscn
+res://Scenes/UI/DialogNode.tscn
+res://Scenes/UI/DialogBox.tscn
+res://Scenes/UI/LoadingScreen.tscn
+res://Scenes/Levels/level_2.tscn
+res://Scenes/Levels/level_3.tscn
+res://Scenes/Levels/level_4.tscn
+res://Scenes/Objects/Window.tscn
+res://Scenes/UI/MainMenu_script.gd
+res://Scenes/UI/MainMenu.tscn
