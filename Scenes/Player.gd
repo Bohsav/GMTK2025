@@ -7,17 +7,19 @@ class_name Player
 @onready var playerbody: CharacterBody2D = $PlayerBody
 @onready var staticbody: CollisionShape2D = $PlayerBody/PlayerCollision
 @onready var runparticles: CPUParticles2D = $PlayerBody/RunParticles
+@onready var camera: CameraController = $PlayerBody/Camera2D
 
 @export var gravity := 400
 @export var speed := 40
 @export var run_speed := 85
 @export var jump_power := 200
 @export var distance_interact := 40
+@export var tile_map_layer : TileMapLayer
 
 var is_running := false
 
-func _draw() -> void:
-	draw_line(get_local_mouse_position(), staticbody.global_position, Color.BLACK, 1)
+func _ready() -> void:
+	camera.set_camera_limits(tile_map_layer.get_used_rect())
 
 func _physics_process(delta: float) -> void:
 	runparticles.emitting = false
