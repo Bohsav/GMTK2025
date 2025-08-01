@@ -30,7 +30,7 @@ func move_left(speed: float):
 	
 func move_up(speed: float):
 	characterbody2d.velocity.y = -speed
-	
+
 func move_down(speed: float):
 	characterbody2d.velocity.y = speed
 

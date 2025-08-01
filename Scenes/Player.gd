@@ -11,7 +11,8 @@ class_name Player
 @onready var camera: CameraController = $PlayerBody/Camera2D
 
 @export var gravity := 400
-@export var speed := 40
+
+@export var speed := 25
 
 @export var run_speed := 70
 @export var jump_power := 200
@@ -22,13 +23,10 @@ class_name Player
 
 @export var is_awake := false
 
-var is_running := true
+var is_running := false
 
 func _ready() -> void:
 	camera.set_camera_limits(tile_map_layer.get_used_rect())
-	sprites.play("wake_up")
-	await get_tree().create_timer(wake_up_time).timeout 
-	is_awake = true
 
 func _physics_process(delta: float) -> void:
 	if not is_awake: return
@@ -48,7 +46,6 @@ func updatePos():
 	self.queue_redraw()
 
 func handleMovement():
-
 	if playerbody.is_on_floor():
 		if inputMod.getAxisX() > 0.0:
 			if is_running:
@@ -58,6 +55,8 @@ func handleMovement():
 				sprites.play("run")
 			else:
 				movementMod.move_right(speed)
+				sprites.flip_h = true
+				sprites.play("walk")
 		
 		elif inputMod.getAxisX() < 0.0:
 			if is_running:
@@ -67,6 +66,8 @@ func handleMovement():
 				sprites.play("run")
 			else:
 				movementMod.move_left(speed)
+				sprites.flip_h = false
+				sprites.play("walk")
 		else:
 			movementMod.idle_x()
 			if playerbody.is_on_floor():
@@ -87,3 +88,10 @@ func _run_particles(flipped: bool) -> void:
 	
 func getPos() -> Vector2:
 	return staticbody.global_position
+
+func playAnimation(name: String) -> void:
+	sprites.play(name)
+
+func setAnimationFrame(name: String, frame: int) -> void:
+	sprites.animation = name
+	sprites.frame = frame

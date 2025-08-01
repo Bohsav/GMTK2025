@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 		ResourceLoader.load_threaded_get_status(loading_scene, loading_progress)
 		if loading_progress[0] >= 1:
 			is_loading = false
-			await get_tree().create_timer(2).timeout 
+			await get_tree().create_timer(3).timeout 
 			get_tree().change_scene_to_packed(ResourceLoader.load_threaded_get(loading_scene))
 			current_scene = ResourceLoader.load_threaded_get(loading_scene)
 	
