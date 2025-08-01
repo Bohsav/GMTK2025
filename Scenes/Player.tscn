@@ -1,4 +1,5 @@
-[gd_scene load_steps=13 format=3 uid="uid://lsjg54jifttk"]
+[gd_scene load_steps=24 format=3 uid="uid://lsjg54jifttk"]
+
 
 [ext_resource type="Script" uid="uid://cr1x03aym8sob" path="res://Scenes/Player.gd" id="1_s0eop"]
 [ext_resource type="PackedScene" uid="uid://bjjmbb5cj4oaw" path="res://Scenes/Modules/Player/CharacterMovementModule.tscn" id="2_ft8w5"]
@@ -7,7 +8,26 @@
 [ext_resource type="PackedScene" uid="uid://csrh10xtccq6k" path="res://Assets/Test/PlayerSprites.tscn" id="5_jmcll"]
 [ext_resource type="Texture2D" uid="uid://bp8mihlkmtkpr" path="res://Assets/Test/sad_lady.png" id="6_52ee3"]
 [ext_resource type="Texture2D" uid="uid://ceslwv1h2ek3g" path="res://Assets/dust_particle.png" id="6_nn08x"]
-[ext_resource type="Script" path="res://Scenes/Modules/Camera/CameraController.gd" id="8_bhhdu"]
+[ext_resource type="Texture2D" uid="uid://cfteos5bwo1a" path="res://Assets/Player/run_0.png" id="7_ksbbd"]
+[ext_resource type="Texture2D" uid="uid://4bnvji3lq060" path="res://Assets/Player/jump_0.png" id="7_miouo"]
+[ext_resource type="Script" uid="uid://douhs7okere04" path="res://Scenes/Modules/Camera/CameraController.gd" id="8_bhhdu"]
+[ext_resource type="Texture2D" uid="uid://bhnkwob40fipa" path="res://Assets/Player/run_1.png" id="8_glx4g"]
+[ext_resource type="Texture2D" uid="uid://chvnjc18cydx2" path="res://Assets/Player/jump_1.png" id="8_o3h8g"]
+[ext_resource type="Texture2D" uid="uid://bmkd2q6iq8vqs" path="res://Assets/Player/run_2.png" id="9_miouo"]
+[ext_resource type="Texture2D" uid="uid://b6y0ts18o0ev8" path="res://Assets/Player/run_3.png" id="10_o3h8g"]
+[ext_resource type="Texture2D" uid="uid://csmctu3e660i" path="res://Assets/Player/wake_up_0.png" id="14_1iu4k"]
+[ext_resource type="Texture2D" uid="uid://b3cg7ke34mto2" path="res://Assets/Player/wake_up_1.png" id="15_m0x7a"]
+[ext_resource type="Texture2D" uid="uid://kaxv22288abg" path="res://Assets/Player/wake_up_2.png" id="16_5v66d"]
+[ext_resource type="Texture2D" uid="uid://s28qn81x0vs3" path="res://Assets/Player/wake_up_3.png" id="17_x63xi"]
+[ext_resource type="Texture2D" uid="uid://bwfyfvudy8ugu" path="res://Assets/Player/wake_up_4.png" id="18_i2e8t"]
+
+[sub_resource type="Curve" id="Curve_nn08x"]
+_limits = [0.0, 1.5, 0.0, 1.0]
+_data = [Vector2(0, 1.5), 0.0, 0.0, 0, 0, Vector2(0.994318, 0.573034), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_52ee3"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bhhdu"]
 animations = [{
@@ -18,18 +38,73 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_miouo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_o3h8g")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ksbbd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_glx4g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_miouo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_o3h8g")
+}],
+"loop": true,
+"name": &"run",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_1iu4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_1iu4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_1iu4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_1iu4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_1iu4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_m0x7a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_5v66d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_x63xi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_i2e8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_52ee3")
+}],
+"loop": false,
+"name": &"wake_up",
+"speed": 3.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ft8w5"]
 radius = 6.0
-
-[sub_resource type="Curve" id="Curve_nn08x"]
-_limits = [0.0, 1.5, 0.0, 1.0]
-_data = [Vector2(0, 1.5), 0.0, 0.0, 0, 0, Vector2(0.994318, 0.573034), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Gradient" id="Gradient_52ee3"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_s0eop")
@@ -42,18 +117,9 @@ script = ExtResource("1_s0eop")
 
 [node name="PlayerBody" type="CharacterBody2D" parent="."]
 
-[node name="PlayerSprites" parent="PlayerBody" instance=ExtResource("5_jmcll")]
-position = Vector2(0, -23)
-scale = Vector2(1, 0.9375)
-sprite_frames = SubResource("SpriteFrames_bhhdu")
-animation = &"idle"
-
-[node name="PlayerCollision" type="CollisionShape2D" parent="PlayerBody"]
-position = Vector2(0, -15)
-shape = SubResource("CapsuleShape2D_ft8w5")
-
 [node name="RunParticles" type="CPUParticles2D" parent="PlayerBody"]
 position = Vector2(0, -1)
+emitting = false
 amount = 4
 texture = ExtResource("6_nn08x")
 lifetime = 0.4
@@ -69,7 +135,19 @@ initial_velocity_max = 20.0
 scale_amount_curve = SubResource("Curve_nn08x")
 color_ramp = SubResource("Gradient_52ee3")
 
+[node name="PlayerSprites" parent="PlayerBody" instance=ExtResource("5_jmcll")]
+position = Vector2(0, -23)
+scale = Vector2(1, 0.9375)
+sprite_frames = SubResource("SpriteFrames_bhhdu")
+animation = &"wake_up"
+speed_scale = 1.1
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="PlayerBody"]
+position = Vector2(0, -15)
+shape = SubResource("CapsuleShape2D_ft8w5")
+
 [node name="Camera2D" type="Camera2D" parent="PlayerBody"]
-position = Vector2(0, -24)
-zoom = Vector2(4, 4)
+position = Vector2(0, -27)
+zoom = Vector2(4.5, 4.5)
+
 script = ExtResource("8_bhhdu")
