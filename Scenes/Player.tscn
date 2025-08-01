@@ -1,3 +1,4 @@
+
 [gd_scene load_steps=31 format=3 uid="uid://lsjg54jifttk"]
 
 [ext_resource type="Script" uid="uid://cr1x03aym8sob" path="res://Scenes/Player.gd" id="1_s0eop"]
@@ -9,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cfteos5bwo1a" path="res://Assets/Player/run_0.png" id="7_ksbbd"]
 [ext_resource type="Texture2D" uid="uid://4bnvji3lq060" path="res://Assets/Player/jump_0.png" id="7_miouo"]
 [ext_resource type="Texture2D" uid="uid://bi3ch6eprmd5h" path="res://Assets/Player/Idle_0.png" id="7_x63xi"]
+[ext_resource type="Script" uid="uid://douhs7okere04" path="res://Scenes/Modules/Camera/CameraController.gd" id="8_bhhdu"]
 [ext_resource type="Texture2D" uid="uid://bhnkwob40fipa" path="res://Assets/Player/run_1.png" id="8_glx4g"]
 [ext_resource type="Texture2D" uid="uid://bguv4qgy5lxn6" path="res://Assets/Player/Idle_1.png" id="8_i2e8t"]
 [ext_resource type="Texture2D" uid="uid://chvnjc18cydx2" path="res://Assets/Player/jump_1.png" id="8_o3h8g"]
@@ -169,3 +171,9 @@ speed_scale = 1.1
 [node name="PlayerCollision" type="CollisionShape2D" parent="PlayerBody"]
 position = Vector2(0, -15)
 shape = SubResource("CapsuleShape2D_ft8w5")
+
+[node name="Camera2D" type="Camera2D" parent="PlayerBody"]
+position = Vector2(0, -27)
+zoom = Vector2(4.5, 4.5)
+
+script = ExtResource("8_bhhdu")

@@ -8,17 +8,25 @@ class_name Player
 @onready var staticbody: CollisionShape2D = $PlayerBody/PlayerCollision
 @onready var runparticles: CPUParticles2D = $PlayerBody/RunParticles
 @onready var sprites: AnimatedSprite2D = $PlayerBody/PlayerSprites
+@onready var camera: CameraController = $PlayerBody/Camera2D
 
 @export var gravity := 400
+
 @export var speed := 25
+
 @export var run_speed := 70
 @export var jump_power := 200
 @export var distance_interact := 40
 @export var wake_up_time := 3
 
+@export var tile_map_layer : TileMapLayer
+
 @export var is_awake := false
 
 var is_running := false
+
+func _ready() -> void:
+	camera.set_camera_limits(tile_map_layer.get_used_rect())
 
 func _physics_process(delta: float) -> void:
 	if not is_awake: return
