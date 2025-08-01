@@ -1,0 +1,69 @@
+[gd_scene load_steps=12 format=3 uid="uid://lsjg54jifttk"]
+
+[ext_resource type="Script" uid="uid://cr1x03aym8sob" path="res://Scenes/Player.gd" id="1_s0eop"]
+[ext_resource type="PackedScene" uid="uid://bjjmbb5cj4oaw" path="res://Scenes/Modules/Player/CharacterMovementModule.tscn" id="2_ft8w5"]
+[ext_resource type="PackedScene" uid="uid://dgcmj6dxwif50" path="res://Scenes/Modules/Player/InputModule.tscn" id="3_h54ih"]
+[ext_resource type="PackedScene" uid="uid://bdfphhvinuypa" path="res://Scenes/Modules/GravityModule.tscn" id="3_jmcll"]
+[ext_resource type="PackedScene" uid="uid://csrh10xtccq6k" path="res://Assets/Test/PlayerSprites.tscn" id="5_jmcll"]
+[ext_resource type="Texture2D" uid="uid://bp8mihlkmtkpr" path="res://Assets/Test/sad_lady.png" id="6_52ee3"]
+[ext_resource type="Texture2D" uid="uid://ceslwv1h2ek3g" path="res://Assets/dust_particle.png" id="6_nn08x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bhhdu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_52ee3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ft8w5"]
+radius = 6.0
+
+[sub_resource type="Curve" id="Curve_nn08x"]
+_limits = [0.0, 1.5, 0.0, 1.0]
+_data = [Vector2(0, 1.5), 0.0, 0.0, 0, 0, Vector2(0.994318, 0.573034), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_52ee3"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_s0eop")
+
+[node name="GravityModule" parent="." instance=ExtResource("3_jmcll")]
+
+[node name="MovementModule" parent="." instance=ExtResource("2_ft8w5")]
+
+[node name="InputModule" parent="." instance=ExtResource("3_h54ih")]
+
+[node name="PlayerBody" type="CharacterBody2D" parent="."]
+
+[node name="PlayerSprites" parent="PlayerBody" instance=ExtResource("5_jmcll")]
+position = Vector2(0, -23)
+scale = Vector2(1, 0.9375)
+sprite_frames = SubResource("SpriteFrames_bhhdu")
+animation = &"idle"
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="PlayerBody"]
+position = Vector2(0, -15)
+shape = SubResource("CapsuleShape2D_ft8w5")
+
+[node name="RunParticles" type="CPUParticles2D" parent="PlayerBody"]
+position = Vector2(0, -1)
+amount = 4
+texture = ExtResource("6_nn08x")
+lifetime = 0.4
+speed_scale = 1.1
+explosiveness = 0.1
+randomness = 0.7
+emission_shape = 2
+emission_sphere_radius = 1.0
+direction = Vector2(-1, 0)
+gravity = Vector2(-20, -70)
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+scale_amount_curve = SubResource("Curve_nn08x")
+color_ramp = SubResource("Gradient_52ee3")

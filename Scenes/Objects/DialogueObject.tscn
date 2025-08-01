@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bocb3yb433tjo"]
+
+[ext_resource type="Script" uid="uid://c8fo0jht1dhc" path="res://Scenes/Objects/DialogueObject_script.gd" id="1_mj6lh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iobnl"]
+size = Vector2(22, 24)
+
+[node name="Chair" type="Node2D"]
+script = ExtResource("1_mj6lh")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_iobnl")
+
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://csrh10xtccq6k"]
+
+[ext_resource type="Texture2D" uid="uid://ci011fdirps6f" path="res://Assets/Test/Player/knight1.png" id="1_86kyk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wyghh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_86kyk")
+}],
+"loop": true,
+"name": &"Test",
+"speed": 5.0
+}]
+
+[node name="PlayerSprites" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_wyghh")
+animation = &"Test"
