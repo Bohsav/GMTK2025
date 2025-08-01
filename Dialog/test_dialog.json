@@ -1,0 +1,19 @@
+{
+	"dialog": [
+		{
+			"important": true,
+			"speed": 1,
+			"text": "This is important/non skippable"
+		},
+		{
+			"important": false,
+			"text": "This is not important, but fast",
+			"speed": 2
+		},
+		{
+			"important": false,
+			"text": "This is regular text",
+			"speed": 1
+		}
+	]
+}
