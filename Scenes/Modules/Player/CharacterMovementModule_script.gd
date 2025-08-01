@@ -34,10 +34,15 @@ func move_up(speed: float):
 func move_down(speed: float):
 	characterbody2d.velocity.y = speed
 
-func jump(power: float):
+func jump(power: float) -> bool:
 	if coyotetime > 0 and not has_jumped:
 		has_jumped = true
 		characterbody2d.velocity.y = -power
-	
+		return true
+	return false
+
 func idle_x():
 	characterbody2d.velocity.x = 0
+
+func hasJumped() -> bool:
+	return has_jumped
