@@ -71,10 +71,10 @@ tracks/1/path = NodePath("CanvasLayer/FadeBlack:material:shader_parameter/outer_
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 3, 8),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(3, 8),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 0.0, 0.8]
+"values": [0.0, 0.8]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -114,10 +114,10 @@ tracks/4/path = NodePath("CanvasLayer/FadeBlack:material:shader_parameter/vignet
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.0, 0.9]
+"values": [0.9]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5f3p6"]
@@ -1842,6 +1842,7 @@ position = Vector2(143, 130)
 dialog_path = ""
 
 [node name="FadeBlack" type="ColorRect" parent="CanvasLayer"]
+z_index = 1
 material = SubResource("ShaderMaterial_xgxfi")
 offset_left = -2.0
 offset_top = -2.0
@@ -1852,7 +1853,6 @@ size_flags_vertical = 6
 mouse_filter = 2
 mouse_force_pass_scroll_events = false
 color = Color(0, 0, 0, 1)
-metadata/_edit_lock_ = true
 
 [node name="NightBackground" type="Sprite2D" parent="."]
 z_index = -1
