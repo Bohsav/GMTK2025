@@ -32,8 +32,9 @@ func _process(delta: float) -> void:
 			get_tree().change_scene_to_packed(ResourceLoader.load_threaded_get(loading_scene))
 			current_scene = ResourceLoader.load_threaded_get(loading_scene)
 	
-func level_end() -> void:
+func level_end(object: Object) -> void:
 	level_count = level_count + 1
+	loadLevel(get_level_by_level_count(level_count))
 	
 func player_death() -> void:
 	player_retries = player_retries + 1
