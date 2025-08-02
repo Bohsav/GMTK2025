@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqngi3nam8wji"]
-
-[ext_resource type="Script" uid="uid://c1atjy8hf61k7" path="res://Scenes/UI/AnimatedTextureRect.gd" id="1_38dso"]
-
-[node name="TextureRect" type="TextureRect"]
-expand_mode = 1
-script = ExtResource("1_38dso")
-frames = null
-speed = null

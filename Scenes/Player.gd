@@ -11,39 +11,34 @@ class_name Player
 @onready var camera: CameraController = $PlayerBody/Camera2D
 
 @export var gravity := 400
-
 @export var speed := 25
-
 @export var run_speed := 70
 @export var jump_power := 200
 @export var distance_interact := 40
-@export var wake_up_time := 3
-
 @export var tile_map_layer : TileMapLayer
-
 @export var is_awake := false
 
 var is_running := false
+var is_dead := false
 
 func _ready() -> void:
 	camera.set_camera_limits(tile_map_layer.get_used_rect())
 
 func _physics_process(delta: float) -> void:
 	if not is_awake: return
+	if is_dead: return
+	if GameMaster.is_dialog: return
+	
 	runparticles.emitting = false
-
-	updatePos()
+	
 	handleGravity(delta)
 	handleMovement()
-
+	
 	playerbody.move_and_slide()
 	return
 
 func handleGravity(delta: float):
 	gravityMod.handleGravity(gravity, delta)
-
-func updatePos():
-	self.queue_redraw()
 
 func handleMovement():
 	if playerbody.is_on_floor():
@@ -57,7 +52,7 @@ func handleMovement():
 				movementMod.move_right(speed)
 				sprites.flip_h = true
 				sprites.play("walk")
-		
+				
 		elif inputMod.getAxisX() < 0.0:
 			if is_running:
 				_run_particles(true)
@@ -72,12 +67,11 @@ func handleMovement():
 			movementMod.idle_x()
 			if playerbody.is_on_floor():
 				sprites.play("idle")
-		
+				
 		if inputMod.getAxisY() > 0.0:
 			if movementMod.jump(jump_power):
 				sprites.play("jump")
-		
-		
+
 func _run_particles(flipped: bool) -> void:
 	if not playerbody.is_on_floor(): return
 	if flipped:
@@ -95,3 +89,15 @@ func playAnimation(name: String) -> void:
 func setAnimationFrame(name: String, frame: int) -> void:
 	sprites.animation = name
 	sprites.frame = frame
+
+func start_death_lerp(time: float):
+	camera.play_shake(1, time)
+	await get_tree().create_timer(time).timeout
+	die()
+
+func die() -> void:
+	is_dead = true
+	sprites.play("death")
+	
+	await get_tree().create_timer(4).timeout
+	get_tree().reload_current_scene()
