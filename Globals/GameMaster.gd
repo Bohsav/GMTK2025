@@ -10,10 +10,13 @@ var level_3 := "uid://cb277sum4bv3r"
 var level_4 := "uid://bn4sdg4xiab6r"
 var level_5 := "uid://hcbminqtn4l4"
 var level_6 := "uid://cwjadpaoywpom"
+var credits := "uid://dhkuud6bdi0xj"
+var main_menu := "uid://dikc2krvceeil"
 
 var loading_progress := []
 var loading_scene: String
 var is_loading := false
+var is_dialog := false
 var current_scene: PackedScene
 
 func connect_signals() -> void:
@@ -33,7 +36,8 @@ func _process(delta: float) -> void:
 		ResourceLoader.load_threaded_get_status(loading_scene, loading_progress)
 		if loading_progress[0] >= 1:
 			is_loading = false
-			await get_tree().create_timer(3).timeout 
+			if loading_scene != "uid://dhkuud6bdi0xj" && loading_scene != "uid://dikc2krvceeil":
+				await get_tree().create_timer(3).timeout 
 			get_tree().change_scene_to_packed(ResourceLoader.load_threaded_get(loading_scene))
 			current_scene = ResourceLoader.load_threaded_get(loading_scene)
 	
@@ -59,7 +63,9 @@ func get_level_by_level_count(value: int) -> String:
 func loadLevel(level: String) -> void:
 	loading_scene = level
 	ResourceLoader.load_threaded_request(loading_scene)
-	get_tree().change_scene_to_packed(preload("uid://i6kuw60qattu"))
+	
+	if loading_scene != "uid://dhkuud6bdi0xj" && loading_scene != "uid://dikc2krvceeil":
+		get_tree().change_scene_to_packed(preload("uid://i6kuw60qattu"))
 	is_loading = true
 
 func getLoadingProgress() -> float:
@@ -70,3 +76,6 @@ func getLoadingProgress() -> float:
 
 func isLoading() -> bool:
 	return is_loading
+
+func getLevel() -> int:
+	return level_count

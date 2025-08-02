@@ -1,0 +1,89 @@
+[gd_scene load_steps=13 format=3 uid="uid://cyo6b2hmixn36"]
+
+[ext_resource type="PackedScene" uid="uid://dy0vm22q3gca8" path="res://Scenes/UI/DialogBox.tscn" id="1_rtuh0"]
+[ext_resource type="Shader" uid="uid://ccfmdcblj1h4l" path="res://Assets/Shaders/Vignette.gdshader" id="2_beikl"]
+[ext_resource type="Texture2D" uid="uid://cxt5pupeugnlt" path="res://Assets/nightmares_border1.png" id="3_2snga"]
+[ext_resource type="Texture2D" uid="uid://b505ulwb1v45j" path="res://Assets/nightmares_border2.png" id="4_5puwv"]
+[ext_resource type="Texture2D" uid="uid://i4jtilanw4fd" path="res://Assets/nightmares_border3.png" id="5_3x1d1"]
+[ext_resource type="Texture2D" uid="uid://25axas3urdk" path="res://Assets/nightmares_border4.png" id="6_8abkw"]
+[ext_resource type="Shader" uid="uid://cpv017e7ca11r" path="res://Assets/Shaders/MonsterMask.gdshader" id="7_e3uyc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xgxfi"]
+shader = ExtResource("2_beikl")
+shader_parameter/inner_radius = 0.0
+shader_parameter/outer_radius = 0.0
+shader_parameter/vignette_strength = 1.0
+shader_parameter/dither_strength = 0.03
+shader_parameter/vignette_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_irw6p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2snga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5puwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3x1d1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8abkw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hwvp3"]
+shader = ExtResource("7_e3uyc")
+
+[sub_resource type="Gradient" id="Gradient_k2mw1"]
+offsets = PackedFloat32Array(0, 0.831169, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_u5ghp"]
+gradient = SubResource("Gradient_k2mw1")
+width = 2056
+height = 2056
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.505, 0.491)
+
+[node name="UI" type="Node2D"]
+
+[node name="Dialog" parent="." instance=ExtResource("1_rtuh0")]
+position = Vector2(0, 45)
+dialog_path = ""
+
+[node name="FadeBlack" type="ColorRect" parent="."]
+z_index = 1
+material = SubResource("ShaderMaterial_xgxfi")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.5
+offset_top = -83.5
+offset_right = 146.5
+offset_bottom = 83.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+color = Color(0, 0, 0, 1)
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="."]
+copy_mode = 2
+
+[node name="Nightmares" type="AnimatedSprite2D" parent="BackBufferCopy"]
+sprite_frames = SubResource("SpriteFrames_irw6p")
+autoplay = "default"
+
+[node name="Mask" type="Sprite2D" parent="BackBufferCopy"]
+material = SubResource("ShaderMaterial_hwvp3")
+texture = SubResource("GradientTexture2D_u5ghp")

@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkaffxphhql0u"]
+[gd_scene load_steps=5 format=3 uid="uid://bkaffxphhql0u"]
 
-[ext_resource type="Texture2D" uid="uid://d0bqi2e0cq2b7" path="res://Assets/Test/chair.png" id="1_12uth"]
+[ext_resource type="Texture2D" uid="uid://cwlqiiv27np07" path="res://Assets/Object/Dark_Chair.png" id="1_12uth"]
 
 [sub_resource type="GDScript" id="GDScript_nic05"]
 script/source = "extends ObjectBase
@@ -11,7 +11,10 @@ func on_interact() -> void:
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iobnl"]
-size = Vector2(28, 32)
+size = Vector2(12, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12uth"]
+size = Vector2(12, 9)
 
 [node name="Chair" type="Node2D"]
 script = SubResource("GDScript_nic05")
@@ -22,7 +25,15 @@ texture = ExtResource("1_12uth")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 6.5)
 shape = SubResource("RectangleShape2D_iobnl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, 11.5)
+shape = SubResource("RectangleShape2D_12uth")
+one_way_collision = true
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

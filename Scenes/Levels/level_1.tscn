@@ -1,45 +1,85 @@
-[gd_scene load_steps=25 format=4 uid="uid://dyltwnfekx7mr"]
+[gd_scene load_steps=14 format=4 uid="uid://dyltwnfekx7mr"]
 
 [ext_resource type="Script" uid="uid://drp21edqukjdu" path="res://LevelRoom.gd" id="1_rf6l5"]
 [ext_resource type="PackedScene" uid="uid://lsjg54jifttk" path="res://Scenes/Player.tscn" id="2_syshm"]
 [ext_resource type="Texture2D" uid="uid://cr8r4qp3v6uoe" path="res://Assets/timesets.png" id="4_iixi8"]
 [ext_resource type="PackedScene" uid="uid://wkebjf1d8chi" path="res://Scenes/Objects/Bed.tscn" id="4_xgxfi"]
 [ext_resource type="PackedScene" uid="uid://bmkq8s4q6jcoa" path="res://Scenes/Objects/ExitObject.tscn" id="5_cyadu"]
-[ext_resource type="Shader" uid="uid://ccfmdcblj1h4l" path="res://Assets/Shaders/Vignette.gdshader" id="6_5f3p6"]
-[ext_resource type="PackedScene" uid="uid://dy0vm22q3gca8" path="res://Scenes/UI/DialogBox.tscn" id="6_jv26f"]
 [ext_resource type="PackedScene" uid="uid://bl0ot8wc67bjx" path="res://Scenes/Objects/Window.tscn" id="7_5f3p6"]
-[ext_resource type="Texture2D" uid="uid://cxt5pupeugnlt" path="res://Assets/nightmares_border1.png" id="9_7r2dd"]
-[ext_resource type="Shader" uid="uid://cpv017e7ca11r" path="res://Assets/Shaders/MonsterMask.gdshader" id="9_rb0md"]
-[ext_resource type="Texture2D" uid="uid://b505ulwb1v45j" path="res://Assets/nightmares_border2.png" id="10_k2mw1"]
-[ext_resource type="Texture2D" uid="uid://i4jtilanw4fd" path="res://Assets/nightmares_border3.png" id="11_tjl6l"]
-[ext_resource type="Texture2D" uid="uid://25axas3urdk" path="res://Assets/nightmares_border4.png" id="12_3628d"]
+[ext_resource type="PackedScene" uid="uid://cyo6b2hmixn36" path="res://Scenes/UI/UINode.tscn" id="7_jv26f"]
 [ext_resource type="Texture2D" uid="uid://bql8xj78t1e1u" path="res://Assets/Day_Background.png" id="14_k2mw1"]
+[ext_resource type="Shader" uid="uid://bxcs62y7412th" path="res://Assets/Shaders/Vignette.gdshader" id="6_5f3p6"]
+[ext_resource type="PackedScene" uid="uid://dy0vm22q3gca8" path="res://Scenes/UI/DialogBox.tscn" id="6_jv26f"]
+[ext_resource type="PackedScene" uid="uid://bl0ot8wc67bjx" path="res://Scenes/Objects/Window2.tscn" id="7_5f3p6"]
 
 [sub_resource type="Animation" id="Animation_5f3p6"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Player:is_awake")
+tracks/0/path = NodePath("UI/FadeBlack:material:shader_parameter/outer_radius")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [0.8]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("UI/FadeBlack:material:shader_parameter/outer_radius")
+tracks/1/path = NodePath("UI/FadeBlack:material:shader_parameter/vignette_strength")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.8]
+"values": [0.9]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player:is_awake")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_k2mw1"]
+resource_name = "wake_up"
+length = 8.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/FadeBlack:material:shader_parameter/outer_radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.8]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UI/Dialog")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["any.wake_up_0"],
+"method": &"start_dialog"
+}]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -48,47 +88,44 @@ tracks/2/path = NodePath("UI/FadeBlack:material:shader_parameter/vignette_streng
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.9]
+"values": [1.0, 0.9]
 }
-
-[sub_resource type="Animation" id="Animation_xgxfi"]
-resource_name = "wake_up"
-length = 8.0
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Player:is_awake")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"start_nightmares"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player:is_awake")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(0, 8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("UI/FadeBlack:material:shader_parameter/outer_radius")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(3, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 0.8]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Player")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0, 6),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
@@ -99,51 +136,11 @@ tracks/2/keys = {
 "method": &"playAnimation"
 }]
 }
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("UI/Dialog")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(4),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": ["test_dialog"],
-"method": &"start_dialog"
-}]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("UI/FadeBlack:material:shader_parameter/vignette_strength")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(3),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.9]
-}
-tracks/5/type = "method"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(8),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"start_nightmares"
-}]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5f3p6"]
 _data = {
 &"RESET": SubResource("Animation_5f3p6"),
-&"wake_up": SubResource("Animation_xgxfi")
+&"wake_up": SubResource("Animation_k2mw1")
 }
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cyadu"]
@@ -1813,52 +1810,9 @@ terrain_set_4/terrain_0/name = "Void"
 terrain_set_4/terrain_0/color = Color(0.0980392, 0.188235, 0.427451, 1)
 sources/0 = SubResource("TileSetAtlasSource_cyadu")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xgxfi"]
-shader = ExtResource("6_5f3p6")
-shader_parameter/inner_radius = 0.0
-shader_parameter/outer_radius = 0.8
-shader_parameter/vignette_strength = 0.9
-shader_parameter/dither_strength = 0.03
-shader_parameter/vignette_color = Color(0, 0, 0, 1)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_irw6p"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9_7r2dd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_k2mw1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_tjl6l")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_3628d")
-}],
-"loop": true,
-"name": &"default",
-"speed": 2.0
-}]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hwvp3"]
-shader = ExtResource("9_rb0md")
-
-[sub_resource type="Gradient" id="Gradient_k2mw1"]
-offsets = PackedFloat32Array(0, 0.636364, 0.850649, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0.141176, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_u5ghp"]
-gradient = SubResource("Gradient_k2mw1")
-width = 512
-height = 512
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.55, 0.45)
-
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_rf6l5")
-nightmare_time = 30.0
+nightmare_time = 0.0
 
 [node name="SequencePlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -1869,13 +1823,13 @@ autoplay = "wake_up"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="Door" parent="." instance=ExtResource("5_cyadu")]
-position = Vector2(235, 79)
+position = Vector2(234, 79)
 
 [node name="Bed" parent="." instance=ExtResource("4_xgxfi")]
 position = Vector2(72, 85)
 
-[node name="Window" parent="." instance=ExtResource("7_5f3p6")]
-position = Vector2(76, 63)
+[node name="Window2" parent="." instance=ExtResource("7_5f3p6")]
+position = Vector2(83, 65)
 scale = Vector2(0.8, 0.8)
 
 [node name="Player" parent="." node_paths=PackedStringArray("tile_map_layer") instance=ExtResource("2_syshm")]
@@ -1890,42 +1844,9 @@ tile_set = SubResource("TileSet_xgxfi")
 [node name="ExitObject" parent="." instance=ExtResource("5_cyadu")]
 position = Vector2(230.843, -205.483)
 
-[node name="UI" type="Node2D" parent="."]
-
-[node name="Dialog" parent="UI" instance=ExtResource("6_jv26f")]
-position = Vector2(0, 45)
-dialog_path = ""
-
-[node name="FadeBlack" type="ColorRect" parent="UI"]
-z_index = 1
-material = SubResource("ShaderMaterial_xgxfi")
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -146.5
-offset_top = -83.5
-offset_right = 146.5
-offset_bottom = 83.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
-mouse_filter = 2
-mouse_force_pass_scroll_events = false
-color = Color(0, 0, 0, 1)
-
-[node name="BackBufferCopy" type="BackBufferCopy" parent="UI"]
-copy_mode = 2
-
-[node name="Nightmares" type="AnimatedSprite2D" parent="UI/BackBufferCopy"]
-sprite_frames = SubResource("SpriteFrames_irw6p")
-autoplay = "default"
-
-[node name="Mask" type="Sprite2D" parent="UI/BackBufferCopy"]
-material = SubResource("ShaderMaterial_hwvp3")
-texture = SubResource("GradientTexture2D_u5ghp")
+[node name="UI" parent="." instance=ExtResource("7_jv26f")]
+visible = false
+position = Vector2(140, 78)
 
 [node name="DayBackground" type="Sprite2D" parent="."]
 z_index = -1
