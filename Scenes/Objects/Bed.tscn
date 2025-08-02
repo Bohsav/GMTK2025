@@ -6,7 +6,8 @@
 script/source = "extends ObjectBase
 
 func on_interact() -> void:
-	return
+	if GameMaster.getLevel() == 1:
+		SignalBus.play_dialog.emit(\"level_1.bed_0\")
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iobnl"]

@@ -29,3 +29,5 @@ text = "werwrwerewrwrwerwerwerewrwrewrwerwerwerwerwerwerwerwerwerwerwewrwewdwrf"
 fit_content = true
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="SkipTimer" type="Timer" parent="."]
