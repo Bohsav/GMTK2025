@@ -101,6 +101,7 @@ _data = {
 &"RESET": SubResource("Animation_0x4y1"),
 &"wake_up": SubResource("Animation_uqiic")
 }
+[ext_resource type="Shader" uid="uid://bxcs62y7412th" path="res://Assets/Shaders/Vignette.gdshader" id="6_u40f0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cyadu"]
 texture = ExtResource("5_1jlnc")
