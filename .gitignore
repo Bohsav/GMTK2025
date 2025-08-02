@@ -1,5 +1,4 @@
-# Godot 4+ specific ignores
-.gitignore
+# Godot 4+ specific ignores .gitignore
 .godot/
 .nomedia
 
