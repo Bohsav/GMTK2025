@@ -31,9 +31,9 @@ func _physics_process(delta: float) -> void:
 		if n_time <= death_time * 60 and not player_is_dying:
 			player_is_dying = true
 			player.start_death_lerp(death_time)
-
+			
 func _process(delta: float) -> void:
 	ui.global_position = camera.get_screen_center_position()
-
+	
 func start_nightmares() -> void:
 	nightmare_run = true

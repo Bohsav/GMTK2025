@@ -6,7 +6,6 @@
 script/source = "extends ObjectBase
 
 func on_interact() -> void:
-	print(GameMaster.getLevel())
 	if GameMaster.getLevel() == 1:
 		SignalBus.play_dialog.emit(\"level_1.bed_0\")
 "

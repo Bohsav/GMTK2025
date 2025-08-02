@@ -5,6 +5,7 @@ var is_hovering := false
 var min_distance := 40.0
 
 func _input(event: InputEvent) -> void:
+	if GameMaster.is_dialog: return
 	if not event.is_action_pressed("interact"): return
 	if event is InputEventMouseButton:
 		var player: Player = NodeUtils.getChildByType(NodeUtils.getChildByType(get_tree().root, LevelRoom), Player) 
