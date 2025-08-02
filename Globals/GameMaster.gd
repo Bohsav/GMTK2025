@@ -5,6 +5,8 @@ var player_retries = 0
 
 var level_0 := "uid://dikc2krvceeil"
 var level_1 := "uid://dyltwnfekx7mr"
+var credits := "uid://dhkuud6bdi0xj"
+var main_menu := "uid://dikc2krvceeil"
 
 var loading_progress := []
 var loading_scene: String
@@ -28,7 +30,8 @@ func _process(delta: float) -> void:
 		ResourceLoader.load_threaded_get_status(loading_scene, loading_progress)
 		if loading_progress[0] >= 1:
 			is_loading = false
-			await get_tree().create_timer(3).timeout 
+			if loading_scene != "uid://dhkuud6bdi0xj" && loading_scene != "uid://dikc2krvceeil":
+				await get_tree().create_timer(3).timeout 
 			get_tree().change_scene_to_packed(ResourceLoader.load_threaded_get(loading_scene))
 			current_scene = ResourceLoader.load_threaded_get(loading_scene)
 	
@@ -49,7 +52,9 @@ func get_level_by_level_count(value: int) -> String:
 func loadLevel(level: String) -> void:
 	loading_scene = level
 	ResourceLoader.load_threaded_request(loading_scene)
-	get_tree().change_scene_to_packed(preload("uid://i6kuw60qattu"))
+	
+	if loading_scene != "uid://dhkuud6bdi0xj" && loading_scene != "uid://dikc2krvceeil":
+		get_tree().change_scene_to_packed(preload("uid://i6kuw60qattu"))
 	is_loading = true
 
 func getLoadingProgress() -> float:

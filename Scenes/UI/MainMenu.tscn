@@ -183,17 +183,17 @@ animation = &"cloud1"
 autoplay = "cloud1"
 
 [node name="Cloud" type="AnimatedSprite2D" parent="."]
-position = Vector2(576, 323.5)
-scale = Vector2(4, 3.99383)
+position = Vector2(576, 324)
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_w0mr3")
 animation = &"cloud"
 autoplay = "cloud"
 
 [node name="Start" type="Button" parent="."]
-offset_left = 443.0
-offset_top = 368.0
-offset_right = 694.0
-offset_bottom = 450.0
+offset_left = 457.0
+offset_top = 343.0
+offset_right = 680.0
+offset_bottom = 416.0
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_ynupv")
 theme_override_styles/hover = SubResource("StyleBoxTexture_k8um8")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_jex3y")
@@ -201,11 +201,23 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_72sra")
 text = "Dream
 "
 
+[node name="Credits" type="Button" parent="."]
+offset_left = 476.0
+offset_top = 453.0
+offset_right = 662.0
+offset_bottom = 494.0
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_ynupv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_k8um8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jex3y")
+theme_override_styles/normal = SubResource("StyleBoxTexture_72sra")
+text = "Credits
+"
+
 [node name="Exit" type="Button" parent="."]
-offset_left = 442.0
-offset_top = 493.0
-offset_right = 694.0
-offset_bottom = 575.0
+offset_left = 503.0
+offset_top = 541.0
+offset_right = 636.0
+offset_bottom = 588.0
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_m48tj")
 theme_override_styles/hover = SubResource("StyleBoxTexture_744d7")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_kl3t2")
@@ -223,11 +235,12 @@ scale = Vector2(3.99653, 3.98765)
 texture = ExtResource("25_4b2gn")
 
 [node name="CornerRabbit" type="AnimatedSprite2D" parent="."]
-position = Vector2(711, 646)
+position = Vector2(706, 648)
 scale = Vector2(2.97049, 2.97049)
 sprite_frames = SubResource("SpriteFrames_uddis")
 animation = &"corner_rabbit"
 autoplay = "corner_rabbit"
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
