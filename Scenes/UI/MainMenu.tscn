@@ -183,7 +183,7 @@ animation = &"cloud1"
 autoplay = "cloud1"
 
 [node name="Cloud" type="AnimatedSprite2D" parent="."]
-position = Vector2(576, 323.5)
+position = Vector2(576, 324.5)
 scale = Vector2(4, 3.99383)
 sprite_frames = SubResource("SpriteFrames_w0mr3")
 animation = &"cloud"
@@ -223,7 +223,7 @@ scale = Vector2(3.99653, 3.98765)
 texture = ExtResource("25_4b2gn")
 
 [node name="CornerRabbit" type="AnimatedSprite2D" parent="."]
-position = Vector2(711, 646)
+position = Vector2(711, 648)
 scale = Vector2(2.97049, 2.97049)
 sprite_frames = SubResource("SpriteFrames_uddis")
 animation = &"corner_rabbit"
