@@ -9,7 +9,6 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		var player: Player = NodeUtils.getChildByType(NodeUtils.getChildByType(get_tree().root, LevelRoom), Player) 
 		var is_valid: bool = is_hovering and player and player.getPos().distance_to(get_global_mouse_position()) < min_distance
-		print(player.getPos().distance_to(get_global_mouse_position()))
 		if is_valid:
 			on_interact()
 

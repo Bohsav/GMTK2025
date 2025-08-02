@@ -5,6 +5,11 @@ var player_retries = 0
 
 var level_0 := "uid://dikc2krvceeil"
 var level_1 := "uid://dyltwnfekx7mr"
+var level_2 := "uid://ku8n7ruvyekk"
+var level_3 := "uid://cb277sum4bv3r"
+var level_4 := "uid://bn4sdg4xiab6r"
+var level_5 := "uid://hcbminqtn4l4"
+var level_6 := "uid://cwjadpaoywpom"
 
 var loading_progress := []
 var loading_scene: String
@@ -43,6 +48,11 @@ func get_level_by_level_count(value: int) -> String:
 	var packedscene = level_0
 	match value:
 		1: packedscene = level_1
+		2: packedscene = level_2
+		3: packedscene = level_3
+		4: packedscene = level_4
+		5: packedscene = level_5
+		6: packedscene = level_6
 		_: packedscene = level_0
 	return packedscene
 

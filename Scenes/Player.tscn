@@ -128,7 +128,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ft8w5"]
-radius = 6.0
+radius = 7.0
+height = 28.0
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_s0eop")
@@ -160,15 +161,14 @@ scale_amount_curve = SubResource("Curve_nn08x")
 color_ramp = SubResource("Gradient_52ee3")
 
 [node name="PlayerSprites" parent="PlayerBody" instance=ExtResource("5_jmcll")]
-position = Vector2(0, -23)
-scale = Vector2(1, 0.9375)
+position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_bhhdu")
 animation = &"walk"
 frame_progress = 0.798473
 speed_scale = 1.1
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="PlayerBody"]
-position = Vector2(0, -15)
+position = Vector2(0, -14)
 shape = SubResource("CapsuleShape2D_ft8w5")
 
 [node name="Camera2D" type="Camera2D" parent="PlayerBody"]

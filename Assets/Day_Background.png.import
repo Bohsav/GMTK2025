@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hv7pj25pmslx"
-path="res://.godot/imported/dark_borders.png-4ebba58684bcb5dd46d7fe3ec60ec2a5.ctex"
+uid="uid://bql8xj78t1e1u"
+path="res://.godot/imported/Day_Background.png-be2e0fa85308afff2eadcdafc56a956d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/dark_borders.png"
-dest_files=["res://.godot/imported/dark_borders.png-4ebba58684bcb5dd46d7fe3ec60ec2a5.ctex"]
+source_file="res://Assets/Day_Background.png"
+dest_files=["res://.godot/imported/Day_Background.png-be2e0fa85308afff2eadcdafc56a956d.ctex"]
 
 [params]
 

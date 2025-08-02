@@ -1,7 +1,11 @@
+Node2D
 AnimatedSprite2D
+Sprite2D
+BackBufferCopy
+PointLight2D
+TextureRect
 AudioStreamPlayer
 AnimationPlayer
-TextureRect
 CanvasLayer
 ColorRect
 Camera2D
@@ -9,6 +13,3 @@ TileMapLayer
 CPUParticles2D
 Button
 MarginContainer
-PanelContainer
-VBoxContainer
-Panel
