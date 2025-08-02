@@ -1,45 +1,74 @@
-[gd_scene load_steps=11 format=3 uid="uid://i6kuw60qattu"]
+[gd_scene load_steps=10 format=3 uid="uid://i6kuw60qattu"]
 
 [ext_resource type="Script" uid="uid://dqhfpsbqftx6d" path="res://Scenes/UI/LoadingScreen_script.gd" id="1_xofxx"]
-[ext_resource type="Texture2D" uid="uid://bbhu11nc6ox55" path="res://Assets/Test/Loading/loading1.png" id="2_owfjg"]
-[ext_resource type="Texture2D" uid="uid://dl70ayftte0yn" path="res://Assets/Test/Loading/loading2.png" id="3_5oco6"]
-[ext_resource type="Texture2D" uid="uid://cafh6khfaxoe8" path="res://Assets/Test/Loading/loading3.png" id="4_wexqv"]
-[ext_resource type="Texture2D" uid="uid://bx3j7nb0wvt0o" path="res://Assets/Test/Loading/loading4.png" id="5_oa47d"]
-[ext_resource type="Texture2D" uid="uid://ck6x8tlqsnq8a" path="res://Assets/Test/Loading/loading5.png" id="6_l2h4m"]
-[ext_resource type="Texture2D" uid="uid://c3141jlkfote" path="res://Assets/Test/Loading/loading6.png" id="7_j6qye"]
-[ext_resource type="Texture2D" uid="uid://jlsxdrovr1jh" path="res://Assets/Test/Loading/loading7.png" id="8_7h3jc"]
-[ext_resource type="Texture2D" uid="uid://ecqu7tb4i1mo" path="res://Assets/Test/Loading/loading8.png" id="9_n42w4"]
+[ext_resource type="Texture2D" uid="uid://cvh0ndwu380g3" path="res://Assets/loading1.png" id="10_n42w4"]
+[ext_resource type="Texture2D" uid="uid://bfc1kx6edpyhw" path="res://Assets/loading2.png" id="11_rsn7k"]
+[ext_resource type="Texture2D" uid="uid://bauncwhvw7frq" path="res://Assets/loading3.png" id="12_2viwr"]
+[ext_resource type="Texture2D" uid="uid://dxenf8h7rjo5e" path="res://Assets/loading4.png" id="13_ldul8"]
+[ext_resource type="Texture2D" uid="uid://nywnkmgf74ab" path="res://Assets/loading5.png" id="14_plekk"]
+[ext_resource type="Texture2D" uid="uid://co3rtgqkjns0f" path="res://Assets/loading6.png" id="15_4f8bx"]
+[ext_resource type="Texture2D" uid="uid://de5cb5fal4q0s" path="res://Assets/loading7.png" id="16_1b3n0"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_owfjg"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_eg4p6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_owfjg")
+"texture": ExtResource("10_n42w4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_7h3jc")
+"texture": ExtResource("11_rsn7k")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_5oco6")
+"texture": ExtResource("12_2viwr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_wexqv")
+"texture": ExtResource("13_ldul8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_oa47d")
+"texture": ExtResource("14_plekk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_l2h4m")
+"texture": ExtResource("15_4f8bx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_j6qye")
+"texture": ExtResource("16_1b3n0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_n42w4")
+"texture": ExtResource("10_n42w4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_n42w4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_n42w4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_n42w4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_n42w4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_n42w4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_n42w4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_n42w4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_n42w4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_n42w4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_n42w4")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 9.0
 }]
 
 [node name="LoadingScreen" type="Control"]
@@ -51,11 +80,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xofxx")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
-color = Color(0.0336, 0.03824, 0.08, 1)
+[node name="AnimatedBackground" type="AnimatedSprite2D" parent="."]
+position = Vector2(574.5, 324.5)
+scale = Vector2(4.03819, 4.0679)
+sprite_frames = SubResource("SpriteFrames_eg4p6")
+autoplay = "default"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -76,10 +105,3 @@ size_flags_vertical = 8
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/MarginContainer/VBoxContainer/AnimatedContainer"]
-position = Vector2(1, 2)
-scale = Vector2(0.2, 0.2)
-sprite_frames = SubResource("SpriteFrames_owfjg")
-autoplay = "default"
-frame_progress = 0.594275

@@ -17,9 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-NodeUtils="*res://Utils/NodeUtils.gd"
 SignalBus="*res://Globals/SignalBus.gd"
 GameMaster="*res://Globals/GameMaster.gd"
+NodeUtils="*res://Globals/Utils/NodeUtils.gd"
 
 [display]
 
