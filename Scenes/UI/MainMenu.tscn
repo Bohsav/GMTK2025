@@ -185,6 +185,7 @@ script = ExtResource("1_g18y6")
 offset_right = 1152.0
 offset_bottom = 646.0
 color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Cloud2" type="AnimatedSprite2D" parent="."]
 position = Vector2(576, 323.5)
@@ -217,6 +218,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_jex3y")
 theme_override_styles/normal = SubResource("StyleBoxTexture_72sra")
 text = "Dream
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="Credits" type="Button" parent="."]
 offset_left = 476.0
@@ -229,6 +231,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_jex3y")
 theme_override_styles/normal = SubResource("StyleBoxTexture_72sra")
 text = "Credits
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="Exit" type="Button" parent="."]
 offset_left = 503.0
@@ -240,6 +243,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_744d7")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_kl3t2")
 theme_override_styles/normal = SubResource("StyleBoxTexture_t6w0q")
 text = "Wake"
+metadata/_edit_use_anchors_ = true
 
 [node name="GameTitle" type="Sprite2D" parent="."]
 position = Vector2(540, 303)
