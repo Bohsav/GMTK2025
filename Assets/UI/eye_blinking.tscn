@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://disimcnq3i6wf"]
+
+[ext_resource type="Texture2D" uid="uid://bd2p0u0pk3t8c" path="res://Assets/Sprites/SpriteFrames/blinking/tile001.png" id="1_q5xho"]
+[ext_resource type="Texture2D" uid="uid://22yeoeej8l4i" path="res://Assets/Sprites/SpriteFrames/blinking/tile002.png" id="2_1o7tf"]
+[ext_resource type="Texture2D" uid="uid://dcidoke47rx6v" path="res://Assets/Sprites/SpriteFrames/blinking/tile003.png" id="3_vo1w3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lqaq6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_q5xho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1o7tf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vo1w3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1o7tf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_q5xho")
+}],
+"loop": true,
+"name": &"blinking",
+"speed": 3.0
+}]
+
+[node name="Blinking" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_lqaq6")
+animation = &"blinking"
+autoplay = "blinking"
+frame_progress = 0.276114

@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://c54kelpxkpjos"]
+
+[ext_resource type="Texture2D" uid="uid://dy1o0n3ty45rk" path="res://Assets/Sprites/SpriteFrames/cloud2/tile000.png" id="1_fp7f0"]
+[ext_resource type="Texture2D" uid="uid://dnem4y0lr02nw" path="res://Assets/Sprites/SpriteFrames/cloud2/tile001.png" id="2_njepg"]
+[ext_resource type="Texture2D" uid="uid://bgo6nturxtyfy" path="res://Assets/Sprites/SpriteFrames/cloud2/tile002.png" id="3_2rtws"]
+[ext_resource type="Texture2D" uid="uid://v6kkfnvmp8j2" path="res://Assets/Sprites/SpriteFrames/cloud2/tile003.png" id="4_x4aoa"]
+[ext_resource type="Texture2D" uid="uid://h2s4tdxakbvh" path="res://Assets/Sprites/SpriteFrames/cloud2/tile004.png" id="5_grbbm"]
+[ext_resource type="Texture2D" uid="uid://bwcsyuhnc2ovf" path="res://Assets/Sprites/SpriteFrames/cloud2/tile005.png" id="6_is7rn"]
+[ext_resource type="Texture2D" uid="uid://dol76dpcwa7qd" path="res://Assets/Sprites/SpriteFrames/cloud2/tile006.png" id="7_q5bsr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uab0n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fp7f0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_njepg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2rtws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x4aoa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_grbbm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_is7rn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_q5bsr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Cloud2" type="AnimatedSprite2D"]
+scale = Vector2(4, 3.98148)
+sprite_frames = SubResource("SpriteFrames_uab0n")
+autoplay = "default"
