@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dhkuud6bdi0xj"]
+[gd_scene load_steps=39 format=3 uid="uid://dhkuud6bdi0xj"]
 
 [ext_resource type="Script" uid="uid://rkmbfb4fo2ca" path="res://Scenes/UI/Credits_script.gd" id="1_awgux"]
 [ext_resource type="Texture2D" uid="uid://dy1o0n3ty45rk" path="res://Assets/Sprites/SpriteFrames/cloud2/tile000.png" id="1_ihxic"]
@@ -24,10 +24,12 @@
 [ext_resource type="Texture2D" uid="uid://bacy268rysde0" path="res://Assets/Sprites/SpriteFrames/cloud/tile006.png" id="21_paf2n"]
 [ext_resource type="Texture2D" uid="uid://jac3j42cvxbs" path="res://Assets/UI/Dialog_4.png" id="22_bp1kb"]
 [ext_resource type="Texture2D" uid="uid://bhtual6duat0q" path="res://Assets/UI/white border.png" id="23_p47v7"]
-[ext_resource type="Texture2D" uid="uid://vpn3v5n04rlu" path="res://Assets/Sprites/SpriteFrames/corner_rabbit/tile000.png" id="24_i7ofd"]
-[ext_resource type="Texture2D" uid="uid://c8c24wva7bbay" path="res://Assets/Sprites/SpriteFrames/corner_rabbit/tile001.png" id="25_53ydh"]
-[ext_resource type="Texture2D" uid="uid://cno0kq83isjdf" path="res://Assets/Sprites/SpriteFrames/corner_rabbit/tile002.png" id="26_tl1be"]
-[ext_resource type="Texture2D" uid="uid://rfboney8a1ee" path="res://Assets/Sprites/SpriteFrames/corner_rabbit/tile003.png" id="27_cdgbw"]
+[ext_resource type="Texture2D" uid="uid://c7nu8arr3b602" path="res://Assets/Sprites/SpriteFrames/corner_rabbit/tile000.png" id="24_i7ofd"]
+[ext_resource type="Texture2D" uid="uid://c5m7wkrka62mf" path="res://Assets/Sprites/SpriteFrames/corner_rabbit/tile001.png" id="25_53ydh"]
+[ext_resource type="Texture2D" uid="uid://cno0kq83isjdf" path="res://Assets/Sprites/SpriteFrames/corner_rabbit/tile004.png" id="26_tl1be"]
+[ext_resource type="Texture2D" uid="uid://vpn3v5n04rlu" path="res://Assets/Sprites/SpriteFrames/corner_rabbit/tile002.png" id="27_1qpga"]
+[ext_resource type="Texture2D" uid="uid://rfboney8a1ee" path="res://Assets/Sprites/SpriteFrames/corner_rabbit/tile005.png" id="27_cdgbw"]
+[ext_resource type="Texture2D" uid="uid://c8c24wva7bbay" path="res://Assets/Sprites/SpriteFrames/corner_rabbit/tile003.png" id="28_40xdw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ijw4v"]
 animations = [{
@@ -128,14 +130,29 @@ texture = ExtResource("22_bp1kb")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cgo6a"]
 texture = ExtResource("22_bp1kb")
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_mypcm"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_2hae6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("24_i7ofd")
 }, {
 "duration": 1.0,
+"texture": ExtResource("24_i7ofd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_i7ofd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_i7ofd")
+}, {
+"duration": 1.0,
 "texture": ExtResource("25_53ydh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_1qpga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_40xdw")
 }, {
 "duration": 1.0,
 "texture": ExtResource("26_tl1be")
@@ -196,7 +213,7 @@ texture = ExtResource("23_p47v7")
 [node name="CornerRabbit" type="AnimatedSprite2D" parent="."]
 position = Vector2(706, 648)
 scale = Vector2(2.97049, 2.97049)
-sprite_frames = SubResource("SpriteFrames_mypcm")
+sprite_frames = SubResource("SpriteFrames_2hae6")
 animation = &"corner_rabbit"
 autoplay = "corner_rabbit"
 

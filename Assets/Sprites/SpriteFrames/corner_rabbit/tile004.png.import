@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5m7wkrka62mf"
-path="res://.godot/imported/tile001.png-f2bdaf6842b4db1ae88984f64ec12a89.ctex"
+uid="uid://cno0kq83isjdf"
+path="res://.godot/imported/tile004.png-5b706f41f1ca205db93e52d99734e368.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/SpriteFrames/corner_rabbit/tile001.png"
-dest_files=["res://.godot/imported/tile001.png-f2bdaf6842b4db1ae88984f64ec12a89.ctex"]
+source_file="res://Assets/Sprites/SpriteFrames/corner_rabbit/tile004.png"
+dest_files=["res://.godot/imported/tile004.png-5b706f41f1ca205db93e52d99734e368.ctex"]
 
 [params]
 
