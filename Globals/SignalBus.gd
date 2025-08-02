@@ -10,3 +10,5 @@ signal exit_reached(object)
 signal player_death(player)
 
 signal level_0_obtain_key
+
+signal play_dialog(name)

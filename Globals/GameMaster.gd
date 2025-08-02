@@ -14,6 +14,7 @@ var level_6 := "uid://cwjadpaoywpom"
 var loading_progress := []
 var loading_scene: String
 var is_loading := false
+var is_dialog := false
 var current_scene: PackedScene
 
 func connect_signals() -> void:
@@ -70,3 +71,6 @@ func getLoadingProgress() -> float:
 
 func isLoading() -> bool:
 	return is_loading
+
+func getLevel() -> int:
+	return level_count

@@ -17,10 +17,12 @@ var finished = false
 
 func _ready():
 	self.visible = false
+	SignalBus.play_dialog.connect(start_dialog)
 
 func start_dialog(name: String) -> void:
 	set_dialog(name)
 	trigger_dialog()
+	GameMaster.is_dialog = true
 
 func reset_dialog():
 	$Timer.set_wait_time(text_speed)
@@ -38,7 +40,7 @@ func trigger_dialog():
 	
 func _process(_delta):
 	# $Indicator.visible = finished
-	if dialog_trigger == 1 && !dialog_ongoing:
+	if dialog_trigger == 1 and !dialog_ongoing:
 		dialog_trigger = 0
 		dialog_ongoing = true
 		reset_dialog()
@@ -50,6 +52,8 @@ func _process(_delta):
 			audio.playing = false
 		elif finished:
 			next_phrase()
+	if dialog_trigger == 0 and !dialog_ongoing:
+		GameMaster.is_dialog = false
 		
 func set_dialog(filename : String):
 	dialog_path = "res://Dialog/" + filename + ".json"
@@ -63,7 +67,7 @@ func get_dialog() -> Array:
 	var test_json_conv = JSON.new()
 	test_json_conv.parse(json)
 	var output: Dictionary = test_json_conv.get_data()
-
+	
 	return output.dialog
 	
 func next_phrase() -> void:
