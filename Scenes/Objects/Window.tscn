@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bl0ot8wc67bjx"]
+[gd_scene load_steps=4 format=3 uid="uid://c6knq4lv265ip"]
 
-[ext_resource type="Texture2D" uid="uid://cyydtmex8ocxg" path="res://Assets/Object/window_2.png" id="1_eretk"]
+[ext_resource type="Texture2D" uid="uid://cf4usoijofkoh" path="res://Assets/Object/window.png" id="1_eretk"]
 
 [sub_resource type="GDScript" id="GDScript_nic05"]
 script/source = "extends ObjectBase
@@ -11,7 +11,7 @@ func on_interact() -> void:
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iobnl"]
-size = Vector2(28, 32)
+size = Vector2(41, 35)
 
 [node name="Window" type="Node2D"]
 script = SubResource("GDScript_nic05")
@@ -22,6 +22,7 @@ texture = ExtResource("1_eretk")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2.5, 1.5)
 shape = SubResource("RectangleShape2D_iobnl")
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

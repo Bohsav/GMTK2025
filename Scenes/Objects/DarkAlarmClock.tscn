@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bogyg0tb6kf3n"]
+[gd_scene load_steps=4 format=3 uid="uid://txgu5hpa8les"]
 
-[ext_resource type="Texture2D" uid="uid://kmfkd0riwhhx" path="res://Assets/Object/Computer.png" id="1_s8nc4"]
+[ext_resource type="Texture2D" uid="uid://c7v615jmkholt" path="res://Assets/Object/Allarm_clock.png" id="1_y3u0m"]
 
 [sub_resource type="GDScript" id="GDScript_nic05"]
 script/source = "extends ObjectBase
@@ -10,29 +10,19 @@ func on_interact() -> void:
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iobnl"]
-size = Vector2(29, 27)
+size = Vector2(8, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s8nc4"]
-size = Vector2(29, 15.875)
-
-[node name="Computer" type="Node2D"]
+[node name="AlarmClock" type="Node2D"]
 script = SubResource("GDScript_nic05")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_s8nc4")
+texture = ExtResource("1_y3u0m")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-0.5, 2.5)
+position = Vector2(89, 11)
 shape = SubResource("RectangleShape2D_iobnl")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-0.5, 7.9375)
-shape = SubResource("RectangleShape2D_s8nc4")
-one_way_collision = true
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

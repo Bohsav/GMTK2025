@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bogyg0tb6kf3n"]
+[gd_scene load_steps=5 format=3 uid="uid://dcwwkvklrivgs"]
 
-[ext_resource type="Texture2D" uid="uid://kmfkd0riwhhx" path="res://Assets/Object/Computer.png" id="1_s8nc4"]
+[ext_resource type="Texture2D" uid="uid://cmk85iga3wykg" path="res://Assets/Object/Dark_Computer.png" id="1_vua17"]
 
 [sub_resource type="GDScript" id="GDScript_nic05"]
 script/source = "extends ObjectBase
@@ -15,11 +15,11 @@ size = Vector2(29, 27)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8nc4"]
 size = Vector2(29, 15.875)
 
-[node name="Computer" type="Node2D"]
+[node name="DarkComputer" type="Node2D"]
 script = SubResource("GDScript_nic05")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_s8nc4")
+texture = ExtResource("1_vua17")
 
 [node name="Area2D" type="Area2D" parent="."]
 

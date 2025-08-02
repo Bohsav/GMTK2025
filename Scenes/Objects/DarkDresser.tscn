@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bogyg0tb6kf3n"]
+[gd_scene load_steps=5 format=3 uid="uid://clxwm2uxltlg8"]
 
-[ext_resource type="Texture2D" uid="uid://kmfkd0riwhhx" path="res://Assets/Object/Computer.png" id="1_s8nc4"]
+[ext_resource type="Texture2D" uid="uid://4obartwnpfyi" path="res://Assets/Object/Dark_Dresser.png" id="1_0qdxp"]
 
 [sub_resource type="GDScript" id="GDScript_nic05"]
 script/source = "extends ObjectBase
@@ -10,28 +10,28 @@ func on_interact() -> void:
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iobnl"]
-size = Vector2(29, 27)
+size = Vector2(43, 25)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s8nc4"]
-size = Vector2(29, 15.875)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yvw1q"]
+size = Vector2(43, 24.875)
 
-[node name="Computer" type="Node2D"]
+[node name="DarkDresser" type="Node2D"]
 script = SubResource("GDScript_nic05")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_s8nc4")
+texture = ExtResource("1_0qdxp")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-0.5, 2.5)
+position = Vector2(0.5, 18.5)
 shape = SubResource("RectangleShape2D_iobnl")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-0.5, 7.9375)
-shape = SubResource("RectangleShape2D_s8nc4")
+position = Vector2(0.5, 18.5625)
+shape = SubResource("RectangleShape2D_yvw1q")
 one_way_collision = true
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
