@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://wkebjf1d8chi" path="res://Scenes/Objects/Bed.tscn" id="3_pnnky"]
 [ext_resource type="PackedScene" uid="uid://lsjg54jifttk" path="res://Scenes/Player.tscn" id="4_blpqv"]
 [ext_resource type="Texture2D" uid="uid://cr8r4qp3v6uoe" path="res://Assets/timesets.png" id="5_1jlnc"]
-[ext_resource type="Shader" uid="uid://ccfmdcblj1h4l" path="res://Assets/Shaders/Vignette.gdshader" id="6_u40f0"]
+[ext_resource type="Shader" uid="uid://bxcs62y7412th" path="res://Assets/Shaders/Vignette.gdshader" id="6_u40f0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cyadu"]
 texture = ExtResource("5_1jlnc")
