@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxc8mvlta8e4p"]
+
+[ext_resource type="Texture2D" uid="uid://dqrqjrmux358t" path="res://Assets/Sprites/SpriteFrames/wall_monster/tile000.png" id="1_pau0c"]
+[ext_resource type="Texture2D" uid="uid://pjrbrpjgtb7h" path="res://Assets/Sprites/SpriteFrames/wall_monster/tile001.png" id="2_gfdit"]
+[ext_resource type="Texture2D" uid="uid://1pdxw4q06j2m" path="res://Assets/Sprites/SpriteFrames/wall_monster/tile002.png" id="3_31lsw"]
+[ext_resource type="Texture2D" uid="uid://lmn77sxxkm5j" path="res://Assets/Sprites/SpriteFrames/wall_monster/tile003.png" id="4_6eaym"]
+[ext_resource type="Texture2D" uid="uid://dtbbwjj84yppn" path="res://Assets/Sprites/SpriteFrames/wall_monster/tile004.png" id="5_4ybib"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_urgw3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pau0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gfdit")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_31lsw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6eaym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4ybib")
+}],
+"loop": true,
+"name": &"wall_monster",
+"speed": 5.0
+}]
+
+[node name="WallMonster" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_urgw3")
+animation = &"wall_monster"
+autoplay = "wall_monster"
+frame_progress = 0.930354
