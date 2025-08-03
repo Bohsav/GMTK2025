@@ -1,4 +1,4 @@
-extends ObjectBase
+extends Node2D
 
 func on_interact():
 	AudioMaster.playSound("DoorOpen")

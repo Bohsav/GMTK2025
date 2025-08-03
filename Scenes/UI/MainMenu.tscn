@@ -1,34 +1,46 @@
+
 [gd_scene load_steps=17 format=3 uid="uid://dikc2krvceeil"]
 
 [ext_resource type="Script" uid="uid://80uilknjrrus" path="res://Scenes/UI/MainMenu_script.gd" id="1_g18y6"]
 [ext_resource type="Texture2D" uid="uid://jac3j42cvxbs" path="res://Assets/UI/Dialog_4.png" id="2_72sra"]
-[ext_resource type="PackedScene" uid="uid://c54kelpxkpjos" path="res://Assets/UI/cloud_2.tscn" id="2_kl3t2"]
+[ext_resource type="PackedScene" uid="uid://c54kelpxkpjos" path="res://Scenes/UI/cloud_2.tscn" id="2_kl3t2"]
 [ext_resource type="Texture2D" uid="uid://d135bnm4cpcbw" path="res://Assets/UI/Game_title.png" id="3_t6w0q"]
 [ext_resource type="PackedScene" uid="uid://ckc1abp0v1kjq" path="res://Assets/UI/cloud_1.tscn" id="3_ynupv"]
 [ext_resource type="PackedScene" uid="uid://dysj5c8nhjxal" path="res://Assets/UI/cloud.tscn" id="4_m48tj"]
 [ext_resource type="PackedScene" uid="uid://cinin7rxi5r7d" path="res://Assets/UI/corner_rabbit.tscn" id="8_dvisc"]
+[ext_resource type="PackedScene" uid="uid://ckc1abp0v1kjq" path="res://Scenes/UI/cloud_1.tscn" id="3_ynupv"]
+[ext_resource type="PackedScene" uid="uid://dysj5c8nhjxal" path="res://Scenes/UI/cloud.tscn" id="4_m48tj"]
+[ext_resource type="Texture2D" uid="uid://ckk04c0h6k4ry" path="res://Assets/UI/Dialog_5.png" id="5_ynupv"]
+[ext_resource type="PackedScene" uid="uid://cinin7rxi5r7d" path="res://Scenes/UI/corner_rabbit.tscn" id="8_dvisc"]
+
 [ext_resource type="Texture2D" uid="uid://bhtual6duat0q" path="res://Assets/UI/white border.png" id="25_4b2gn"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ynupv"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ynupv"]
-texture = ExtResource("2_72sra")
+texture = ExtResource("5_ynupv")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k8um8"]
-texture = ExtResource("2_72sra")
+texture = ExtResource("5_ynupv")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jex3y"]
-texture = ExtResource("2_72sra")
+texture = ExtResource("5_ynupv")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_72sra"]
 texture = ExtResource("2_72sra")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m48tj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dvisc"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m48tj"]
-texture = ExtResource("2_72sra")
+texture = ExtResource("5_ynupv")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_744d7"]
-texture = ExtResource("2_72sra")
+texture = ExtResource("5_ynupv")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kl3t2"]
-texture = ExtResource("2_72sra")
+texture = ExtResource("5_ynupv")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t6w0q"]
 texture = ExtResource("2_72sra")
@@ -56,6 +68,7 @@ offset_left = 457.0
 offset_top = 343.0
 offset_right = 680.0
 offset_bottom = 416.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ynupv")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_ynupv")
 theme_override_styles/hover = SubResource("StyleBoxTexture_k8um8")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_jex3y")
@@ -69,6 +82,7 @@ offset_left = 476.0
 offset_top = 453.0
 offset_right = 662.0
 offset_bottom = 494.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m48tj")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_ynupv")
 theme_override_styles/hover = SubResource("StyleBoxTexture_k8um8")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_jex3y")
@@ -82,6 +96,7 @@ offset_left = 503.0
 offset_top = 541.0
 offset_right = 636.0
 offset_bottom = 588.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dvisc")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_m48tj")
 theme_override_styles/hover = SubResource("StyleBoxTexture_744d7")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_kl3t2")
