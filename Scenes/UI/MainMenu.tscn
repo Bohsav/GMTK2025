@@ -1,4 +1,5 @@
-[gd_scene load_steps=21 format=3 uid="uid://dikc2krvceeil"]
+
+[gd_scene load_steps=17 format=3 uid="uid://dikc2krvceeil"]
 
 [ext_resource type="Script" uid="uid://80uilknjrrus" path="res://Scenes/UI/MainMenu_script.gd" id="1_g18y6"]
 [ext_resource type="Texture2D" uid="uid://jac3j42cvxbs" path="res://Assets/UI/Dialog_4.png" id="2_72sra"]
