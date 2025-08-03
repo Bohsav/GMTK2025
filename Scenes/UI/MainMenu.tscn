@@ -1,18 +1,13 @@
-
-[gd_scene load_steps=17 format=3 uid="uid://dikc2krvceeil"]
+[gd_scene load_steps=21 format=3 uid="uid://dikc2krvceeil"]
 
 [ext_resource type="Script" uid="uid://80uilknjrrus" path="res://Scenes/UI/MainMenu_script.gd" id="1_g18y6"]
 [ext_resource type="Texture2D" uid="uid://jac3j42cvxbs" path="res://Assets/UI/Dialog_4.png" id="2_72sra"]
 [ext_resource type="PackedScene" uid="uid://c54kelpxkpjos" path="res://Scenes/UI/cloud_2.tscn" id="2_kl3t2"]
 [ext_resource type="Texture2D" uid="uid://d135bnm4cpcbw" path="res://Assets/UI/Game_title.png" id="3_t6w0q"]
-[ext_resource type="PackedScene" uid="uid://ckc1abp0v1kjq" path="res://Assets/UI/cloud_1.tscn" id="3_ynupv"]
-[ext_resource type="PackedScene" uid="uid://dysj5c8nhjxal" path="res://Assets/UI/cloud.tscn" id="4_m48tj"]
-[ext_resource type="PackedScene" uid="uid://cinin7rxi5r7d" path="res://Assets/UI/corner_rabbit.tscn" id="8_dvisc"]
 [ext_resource type="PackedScene" uid="uid://ckc1abp0v1kjq" path="res://Scenes/UI/cloud_1.tscn" id="3_ynupv"]
 [ext_resource type="PackedScene" uid="uid://dysj5c8nhjxal" path="res://Scenes/UI/cloud.tscn" id="4_m48tj"]
 [ext_resource type="Texture2D" uid="uid://ckk04c0h6k4ry" path="res://Assets/UI/Dialog_5.png" id="5_ynupv"]
 [ext_resource type="PackedScene" uid="uid://cinin7rxi5r7d" path="res://Scenes/UI/corner_rabbit.tscn" id="8_dvisc"]
-
 [ext_resource type="Texture2D" uid="uid://bhtual6duat0q" path="res://Assets/UI/white border.png" id="25_4b2gn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ynupv"]
