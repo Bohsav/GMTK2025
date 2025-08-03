@@ -199,8 +199,7 @@ color_ramp = SubResource("Gradient_52ee3")
 [node name="PlayerSprites" parent="PlayerBody" instance=ExtResource("5_jmcll")]
 position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_bhhdu")
-animation = &"walk"
-frame_progress = 0.592808
+animation = &"death"
 speed_scale = 1.1
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="PlayerBody"]
