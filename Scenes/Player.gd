@@ -1,6 +1,9 @@
 extends Node2D
 class_name Player
 
+@onready var audiorunning = preload("res://Assets/Audio/Running.ogg")
+@onready var audiowalking = preload("res://Assets/Audio/Walking.ogg")
+
 @onready var movementMod: MovementModule = $MovementModule
 @onready var gravityMod: GravityModule = $GravityModule
 @onready var inputMod: InputModule = $InputModule
@@ -9,6 +12,7 @@ class_name Player
 @onready var runparticles: CPUParticles2D = $PlayerBody/RunParticles
 @onready var sprites: AnimatedSprite2D = $PlayerBody/PlayerSprites
 @onready var camera: CameraController = $PlayerBody/Camera2D
+@onready var audioplayer: AudioStreamPlayer = $AudioStreamPlayer
 
 @export var gravity := 400
 @export var speed := 25
@@ -48,10 +52,16 @@ func handleMovement():
 				movementMod.move_right(run_speed)
 				sprites.flip_h = true
 				sprites.play("run")
+				if not audioplayer.playing:
+					audioplayer.stream = audiorunning
+					audioplayer.play(audioplayer.get_playback_position())
 			else:
 				movementMod.move_right(speed)
 				sprites.flip_h = true
 				sprites.play("walk")
+				if not audioplayer.playing:
+					audioplayer.stream = audiowalking
+					audioplayer.play(audioplayer.get_playback_position())
 				
 		elif inputMod.getAxisX() < 0.0:
 			if is_running:
@@ -59,18 +69,26 @@ func handleMovement():
 				movementMod.move_left(run_speed)
 				sprites.flip_h = false
 				sprites.play("run")
+				if not audioplayer.playing:
+					audioplayer.stream = audiorunning
+					audioplayer.play(audioplayer.get_playback_position())
 			else:
 				movementMod.move_left(speed)
 				sprites.flip_h = false
 				sprites.play("walk")
+				if not audioplayer.playing:
+					audioplayer.stream = audiowalking
+					audioplayer.play(audioplayer.get_playback_position())
 		else:
 			movementMod.idle_x()
 			if playerbody.is_on_floor():
 				sprites.play("idle")
+				audioplayer.stop()
 				
 		if inputMod.getAxisY() > 0.0:
 			if movementMod.jump(jump_power):
 				sprites.play("jump")
+				audioplayer.stop()
 
 func _run_particles(flipped: bool) -> void:
 	if not playerbody.is_on_floor(): return
@@ -98,6 +116,7 @@ func start_death_lerp(time: float):
 func die() -> void:
 	is_dead = true
 	sprites.play("death")
-	
+		
 	await get_tree().create_timer(4).timeout
+	GameMaster.restart_systems()
 	get_tree().reload_current_scene()

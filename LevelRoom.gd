@@ -21,7 +21,7 @@ func _ready() -> void:
 	n_time = nightmare_time * 60
 	nightmare_mask.scale = Vector2(15, 15)
 	player.is_running = player_running
-
+	
 func _physics_process(delta: float) -> void:
 	if nightmare_run and nightmare_time > 0:
 		n_time = n_time - 1
@@ -31,9 +31,10 @@ func _physics_process(delta: float) -> void:
 		if n_time <= death_time * 60 and not player_is_dying:
 			player_is_dying = true
 			player.start_death_lerp(death_time)
-			
+			 
 func _process(delta: float) -> void:
 	ui.global_position = camera.get_screen_center_position()
 	
 func start_nightmares() -> void:
 	nightmare_run = true
+	
