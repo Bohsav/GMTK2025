@@ -2,7 +2,7 @@
 	"dialog": [
 		{
 			"important": true,
-			"speed": 1.0,
+			"speed": 1,
 			"text": "..."
 		}
 	]

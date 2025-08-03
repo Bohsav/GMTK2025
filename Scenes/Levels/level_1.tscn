@@ -1822,6 +1822,9 @@ autoplay = "wake_up"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
+[node name="Door" parent="." instance=ExtResource("5_cyadu")]
+position = Vector2(234, 79)
+
 [node name="Bed" parent="." instance=ExtResource("4_xgxfi")]
 position = Vector2(72, 85)
 
@@ -1849,52 +1852,3 @@ position = Vector2(140, 78)
 z_index = -1
 position = Vector2(144, 72)
 texture = ExtResource("14_k2mw1")
-
-[node name="Dresser" parent="." instance=ExtResource("9_7r2dd")]
-position = Vector2(50, 71)
-scale = Vector2(0.8, 0.8)
-
-[node name="Wardrobe" parent="." instance=ExtResource("10_k2mw1")]
-visible = false
-position = Vector2(135, 70)
-scale = Vector2(0.8, 0.8)
-
-[node name="DarkAlarmClock" parent="." instance=ExtResource("11_tjl6l")]
-position = Vector2(61, 76)
-
-[node name="Computer" parent="." instance=ExtResource("12_3628d")]
-position = Vector2(197, 80)
-
-[node name="DarkLaundryBasket" parent="." instance=ExtResource("13_irw6p")]
-position = Vector2(164, 83)
-scale = Vector2(0.8, 0.8)
-
-[node name="CoatHanger" parent="." instance=ExtResource("14_tjl6l")]
-position = Vector2(139, 72)
-scale = Vector2(0.8, 0.8)
-
-[node name="Chair" parent="." instance=ExtResource("15_3628d")]
-position = Vector2(208, 80)
-
-[node name="Door" parent="." instance=ExtResource("5_cyadu")]
-position = Vector2(234, 79)
-
-[node name="Player" parent="." node_paths=PackedStringArray("tile_map_layer") instance=ExtResource("2_syshm")]
-position = Vector2(95, 96)
-jump_power = 150
-tile_map_layer = NodePath("../Ground")
-
-[node name="Help" type="RichTextLabel" parent="."]
-offset_left = 46.0
-offset_top = 116.0
-offset_right = 247.0
-offset_bottom = 135.0
-theme_override_fonts/normal_font = ExtResource("16_3628d")
-theme_override_font_sizes/normal_font_size = 12
-bbcode_enabled = true
-text = "[A] and [D] to move."
-horizontal_alignment = 1
-
-[node name="UI" parent="." instance=ExtResource("7_jv26f")]
-visible = false
-position = Vector2(140, 78)
