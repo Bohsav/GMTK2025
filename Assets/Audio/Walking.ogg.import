@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Walking.ogg-5222bb5b227a4f05da2c02aa53692dca.
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

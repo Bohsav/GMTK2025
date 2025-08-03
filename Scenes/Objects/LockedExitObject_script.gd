@@ -1,11 +1,12 @@
 extends ObjectBase
 
-@onready var door := preload("res://Scenes/Objects/ExitObject.tscn")
+@onready var door: Node2D = get_parent().get_node("UnlockedDoor")
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite
 
 @export var is_dark = false
 
 func _ready() -> void:
+	door.global_position = Vector2(-100, -100)
 	if is_dark:
 		sprite.animation = "dark"
 	else:
@@ -13,7 +14,9 @@ func _ready() -> void:
 		
 func on_interact():
 	if PlayerInventory.has("key"):
-		var d: Node2D = door.instantiate()
-		d.position = self.position
+		PlayerInventory.clearInventory()
+		door.visible = true
+		
 		await get_tree().create_timer(1).timeout
-		get_parent().add_child(d)
+		door.global_position = self.position
+		self.position = Vector2(-100, -100)

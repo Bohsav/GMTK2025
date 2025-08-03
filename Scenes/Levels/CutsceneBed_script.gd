@@ -8,6 +8,9 @@ extends Node2D
 
 var counter: int = 0
 
+func nextLevel() -> void:
+	GameMaster.level_end(self)
+
 func setImageScene(name: String, frame: int):
 	sprites.animation = name
 	sprites.frame = frame

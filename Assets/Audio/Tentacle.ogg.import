@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/Tentacle.ogg-1fea8b7ffe3e5bf0917d6e2ab93e7c78
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

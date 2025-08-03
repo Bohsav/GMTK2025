@@ -178,6 +178,8 @@ script = ExtResource("1_s0eop")
 
 [node name="PlayerBody" type="CharacterBody2D" parent="."]
 
+[node name="AudioListener2D" type="AudioListener2D" parent="PlayerBody"]
+
 [node name="RunParticles" type="CPUParticles2D" parent="PlayerBody"]
 position = Vector2(0, -1)
 emitting = false

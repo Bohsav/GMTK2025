@@ -1,0 +1,14 @@
+{
+	"dialog": [
+		{
+			"important": true,
+			"speed": 1,
+			"text": "There is a key in here."
+		},
+		{
+			"important": true,
+			"speed": 1,
+			"text": "[Key aquired]"
+		}
+	]
+}

@@ -24,9 +24,12 @@
 [ext_resource type="Shader" uid="uid://bxcs62y7412th" path="res://Assets/Shaders/Vignette.gdshader" id="21_hmaoj"]
 [ext_resource type="PackedScene" uid="uid://dy0vm22q3gca8" path="res://Scenes/UI/DialogBox.tscn" id="22_wn80x"]
 
+[sub_resource type="Animation" id="Animation_o5w7c"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_notfw"]
 resource_name = "wake_up"
-length = 77.0
+length = 72.0
 step = 0.1
 tracks/0/type = "method"
 tracks/0/imported = false
@@ -35,8 +38,8 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 15, 30, 45, 55, 65, 75),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 12.1, 24, 40, 50, 60, 70, 72),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "values": [{
 "args": ["open_door", 0],
 "method": &"setImageScene"
@@ -58,6 +61,9 @@ tracks/0/keys = {
 }, {
 "args": ["cutscene", 4],
 "method": &"setImageScene"
+}, {
+"args": [],
+"method": &"nextLevel"
 }]
 }
 tracks/1/type = "method"
@@ -67,7 +73,7 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.1, 15, 45, 50),
+"times": PackedFloat32Array(0.1, 12.1, 40, 45),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "values": [{
 "args": ["WindBlowing"],
@@ -83,9 +89,6 @@ tracks/1/keys = {
 "method": &"startHeavyBreathing"
 }]
 }
-
-[sub_resource type="Animation" id="Animation_o5w7c"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o5w7c"]
 _data = {

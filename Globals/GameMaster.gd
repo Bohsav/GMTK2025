@@ -11,7 +11,7 @@ var level_4 := "uid://bn4sdg4xiab6r"
 var level_5 := "uid://hcbminqtn4l4"
 var level_6 := "uid://cwjadpaoywpom"
 var level_7 := "uid://xarfhkpvt20n"
-var level_8 := ""
+var level_8 := "uid://d3uguysn5xusm"
 var credits := "uid://dhkuud6bdi0xj"
 var main_menu := "uid://dikc2krvceeil"
 
@@ -43,12 +43,19 @@ func _process(delta: float) -> void:
 			get_tree().change_scene_to_packed(ResourceLoader.load_threaded_get(loading_scene))
 			current_scene = ResourceLoader.load_threaded_get(loading_scene)
 	
+func reset_game() -> void:
+	restart_systems()
+	level_count = 0
+	loadLevel(get_level_by_level_count(level_count))
+	
 func level_end(object: Object) -> void:
+	print(level_count)
 	restart_systems()
 	level_count = level_count + 1
 	loadLevel(get_level_by_level_count(level_count))
 	
 func restart_systems() -> void:
+	is_dialog = false
 	AudioMaster.stop()
 	PlayerInventory.clearInventory()
 	

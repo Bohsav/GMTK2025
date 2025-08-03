@@ -32,8 +32,8 @@ animations = [{
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xgxfi"]
 shader = ExtResource("2_beikl")
 shader_parameter/inner_radius = 0.0
-shader_parameter/outer_radius = 0.8
-shader_parameter/vignette_strength = 0.9
+shader_parameter/outer_radius = 0.0
+shader_parameter/vignette_strength = 1.0
 shader_parameter/dither_strength = 0.03
 shader_parameter/vignette_color = Color(0, 0, 0, 1)
 
@@ -70,7 +70,7 @@ width = 2056
 height = 2056
 fill = 1
 fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.692308, 0.24359)
+fill_to = Vector2(0.505, 0.491)
 
 [node name="UI" type="Node2D"]
 script = ExtResource("1_8abkw")

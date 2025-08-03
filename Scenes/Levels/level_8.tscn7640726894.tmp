@@ -1,73 +1,123 @@
-[gd_scene load_steps=21 format=4 uid="uid://cb277sum4bv3r"]
+[gd_scene load_steps=23 format=4 uid="uid://d3uguysn5xusm"]
 
-[ext_resource type="Script" uid="uid://drp21edqukjdu" path="res://LevelRoom.gd" id="1_yy6i0"]
-[ext_resource type="PackedScene" uid="uid://bdonkaj4u7n41" path="res://Scenes/Objects/PaintedDoor.tscn" id="2_13yca"]
-[ext_resource type="Script" uid="uid://cxif283mh675q" path="res://Scenes/Objects/painted_door.gd" id="3_13yca"]
-[ext_resource type="PackedScene" uid="uid://wkebjf1d8chi" path="res://Scenes/Objects/Bed.tscn" id="3_x1k1j"]
-[ext_resource type="PackedScene" uid="uid://lsjg54jifttk" path="res://Scenes/Player.tscn" id="4_4ahh4"]
-[ext_resource type="Texture2D" uid="uid://cr8r4qp3v6uoe" path="res://Assets/timesets.png" id="5_dl55b"]
-[ext_resource type="PackedScene" uid="uid://cyo6b2hmixn36" path="res://Scenes/UI/UINode.tscn" id="6_yy6i0"]
-[ext_resource type="Texture2D" uid="uid://bql8xj78t1e1u" path="res://Assets/Day_Background.png" id="7_1hf40"]
-[ext_resource type="PackedScene" uid="uid://cypq1v75y1enu" path="res://Scenes/Objects/Dresser.tscn" id="7_osqx1"]
-[ext_resource type="PackedScene" uid="uid://b5ide62glwjs" path="res://Scenes/Objects/AlarmClock.tscn" id="9_md4x4"]
-[ext_resource type="PackedScene" uid="uid://bogyg0tb6kf3n" path="res://Scenes/Objects/Computer.tscn" id="10_1hf40"]
-[ext_resource type="PackedScene" uid="uid://kn27vsabikbe" path="res://Scenes/Objects/DarkLaundryBasket.tscn" id="11_13yca"]
-[ext_resource type="PackedScene" uid="uid://c36ton7cf5jet" path="res://Scenes/Objects/CoatHanger.tscn" id="11_md4x4"]
-[ext_resource type="PackedScene" uid="uid://bkaffxphhql0u" path="res://Scenes/Objects/Chair.tscn" id="12_1hf40"]
-[ext_resource type="PackedScene" uid="uid://dosm7mprm80eb" path="res://Scenes/Objects/ExitWindow.tscn" id="12_13yca"]
+[ext_resource type="Script" uid="uid://dnorc4qygs1ao" path="res://Scenes/Levels/level_8_script.gd" id="1_3cj6i"]
+[ext_resource type="PackedScene" uid="uid://wkebjf1d8chi" path="res://Scenes/Objects/Bed.tscn" id="3_3cj6i"]
+[ext_resource type="Script" uid="uid://bt0l1iur1tqom" path="res://Scenes/Objects/LastExitObject.gd" id="3_4a00t"]
+[ext_resource type="PackedScene" uid="uid://bmkq8s4q6jcoa" path="res://Scenes/Objects/ExitObject.tscn" id="3_y6qft"]
+[ext_resource type="PackedScene" uid="uid://bl0ot8wc67bjx" path="res://Scenes/Objects/Window2.tscn" id="4_4a00t"]
+[ext_resource type="Texture2D" uid="uid://cr8r4qp3v6uoe" path="res://Assets/timesets.png" id="5_51riq"]
+[ext_resource type="Texture2D" uid="uid://bql8xj78t1e1u" path="res://Assets/Day_Background.png" id="6_63fij"]
+[ext_resource type="PackedScene" uid="uid://cypq1v75y1enu" path="res://Scenes/Objects/Dresser.tscn" id="7_6a1eu"]
+[ext_resource type="PackedScene" uid="uid://b5ide62glwjs" path="res://Scenes/Objects/AlarmClock.tscn" id="7_r4t5f"]
+[ext_resource type="PackedScene" uid="uid://2jnrenkrd6r5" path="res://Scenes/Objects/Wardrobe.tscn" id="8_y6qft"]
+[ext_resource type="PackedScene" uid="uid://kn27vsabikbe" path="res://Scenes/Objects/DarkLaundryBasket.tscn" id="9_tlxdu"]
+[ext_resource type="PackedScene" uid="uid://bogyg0tb6kf3n" path="res://Scenes/Objects/Computer.tscn" id="10_wxeqx"]
+[ext_resource type="PackedScene" uid="uid://bkaffxphhql0u" path="res://Scenes/Objects/Chair.tscn" id="11_8fqag"]
+[ext_resource type="PackedScene" uid="uid://c36ton7cf5jet" path="res://Scenes/Objects/CoatHanger.tscn" id="12_51riq"]
+[ext_resource type="PackedScene" uid="uid://fqq4pb8bq08b" path="res://Scenes/Objects/Poster.tscn" id="14_3cj6i"]
+[ext_resource type="PackedScene" uid="uid://lsjg54jifttk" path="res://Scenes/Player.tscn" id="15_l1is2"]
+[ext_resource type="PackedScene" uid="uid://cyo6b2hmixn36" path="res://Scenes/UI/UINode.tscn" id="17_eeh2q"]
 
-[sub_resource type="Animation" id="Animation_sy7oa"]
+[sub_resource type="Animation" id="Animation_5f3p6"]
 length = 0.001
-
-[sub_resource type="Animation" id="Animation_md4x4"]
-resource_name = "wake_up"
-length = 8.0
-step = 0.1
-tracks/0/type = "method"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".")
+tracks/0/path = NodePath("UI/FadeBlack:material:shader_parameter/outer_radius")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(8),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"start_nightmares"
-}]
+"update": 0,
+"values": [0.8]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Player:is_awake")
+tracks/1/path = NodePath("UI/FadeBlack:material:shader_parameter/vignette_strength")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.9]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("UI/FadeBlack:material:shader_parameter/outer_radius")
+tracks/2/path = NodePath("Player:is_awake")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_k2mw1"]
+resource_name = "wake_up"
+length = 8.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/FadeBlack:material:shader_parameter/outer_radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
 "times": PackedFloat32Array(3, 8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 0.8]
 }
-tracks/3/type = "method"
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UI/Dialog")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["any.wake_up_0"],
+"method": &"start_dialog"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UI/FadeBlack:material:shader_parameter/vignette_strength")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.9]
+}
+tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Player")
+tracks/3/path = NodePath("Player:is_awake")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(0, 6),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
@@ -78,41 +128,15 @@ tracks/3/keys = {
 "method": &"playAnimation"
 }]
 }
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("UI/Dialog")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(4),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": ["any.wake_up_0"],
-"method": &"start_dialog"
-}]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("UI/FadeBlack:material:shader_parameter/vignette_strength")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [1.0, 0.9]
-}
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_1hf40"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5f3p6"]
 _data = {
-&"RESET": SubResource("Animation_sy7oa"),
-&"wake_up": SubResource("Animation_md4x4")
+&"RESET": SubResource("Animation_5f3p6"),
+&"wake_up": SubResource("Animation_k2mw1")
 }
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cyadu"]
-texture = ExtResource("5_dl55b")
+texture = ExtResource("5_51riq")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
@@ -1778,63 +1802,80 @@ terrain_set_4/terrain_0/name = "Void"
 terrain_set_4/terrain_0/color = Color(0.0980392, 0.188235, 0.427451, 1)
 sources/0 = SubResource("TileSetAtlasSource_cyadu")
 
-[node name="Level3" type="Node2D"]
-script = ExtResource("1_yy6i0")
+[node name="Level8" type="Node2D"]
+script = ExtResource("1_3cj6i")
 nightmare_time = 0.0
 
 [node name="SequencePlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_1hf40")
+&"": SubResource("AnimationLibrary_5f3p6")
 }
 autoplay = "wake_up"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Door" parent="." instance=ExtResource("3_y6qft")]
+position = Vector2(225, 79)
+script = ExtResource("3_4a00t")
 
-[node name="PaintedDoor" parent="." instance=ExtResource("2_13yca")]
-position = Vector2(171, 64)
-script = ExtResource("3_13yca")
+[node name="Bed" parent="." instance=ExtResource("3_3cj6i")]
+position = Vector2(97, 85)
 
-[node name="Bed" parent="." instance=ExtResource("3_x1k1j")]
-position = Vector2(92, 85)
+[node name="Window2" parent="." instance=ExtResource("4_4a00t")]
+position = Vector2(98, 57)
+scale = Vector2(0.8, 0.8)
 
 [node name="Ground" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAHAAEAAAAbAAQAAAAGAAEAAAAaAAQAAAAFAAEAAAAZAAQAAAAEAAEAAAAbAAQAAAADAAEAAAAaAAQAAAAIAAEAAAAZAAQAAAAJAAEAAAAaAAQAAAAKAAEAAAAbAAQAAAALAAEAAAAZAAQAAAAMAAEAAAAaAAQAAAANAAEAAAAbAAQAAAAOAAEAAAAZAAQAAAAPAAEAAAAaAAQAAAAQAAEAAAAeAAMAAAAQAAAAAAAZAAgAAAAPAAAAAAAZAAgAAAAOAAAAAAAZAAgAAAANAAAAAAAZAAgAAAAMAAAAAAAZAAgAAAALAAAAAAAZAAgAAAAKAAAAAAAZAAgAAAAJAAAAAAAZAAgAAAAIAAAAAAAZAAgAAAAHAAAAAAAZAAgAAAAGAAAAAAAZAAgAAAAFAAAAAAAZAAgAAAAEAAAAAAAZAAgAAAADAAAAAAAZAAgAAAACAAAAAAAZAAgAAAABAAAAAAAZAAgAAAABAAEAAAAgAAMAAAAAAAEAAAAZAAgAAAAAAAYAAAAZAAgAAAAAAAcAAAAZAAgAAAAAAAUAAAAZAAgAAAAAAAQAAAAZAAgAAAAAAAMAAAAZAAgAAAAAAAIAAAAZAAgAAAAAAAAAAAAZAAgAAAACAAEAAAAZAAQAAAACAAgAAAAZAAgAAAAAAAgAAAAZAAgAAAABAAgAAAAZAAgAAAADAAgAAAAZAAgAAAARAAAAAAAZAAgAAAARAAEAAAAOAAgAAAARAAIAAAAOAAgAAAAAAAkAAAAZAAgAAAABAAkAAAAZAAgAAAACAAkAAAAZAAgAAAADAAkAAAAZAAgAAAASAAIAAAAZAAgAAAASAAEAAAAOAAgAAAASAAAAAAAZAAgAAAAAAP//AAAZAAgAAAABAP//AAAZAAgAAAACAP//AAAZAAgAAAADAP//AAAZAAgAAAAEAP//AAAZAAgAAAAFAP//AAAZAAgAAAAGAP//AAAZAAgAAAAHAP//AAAZAAgAAAAIAP//AAAZAAgAAAAJAP//AAAZAAgAAAAKAP//AAAZAAgAAAALAP//AAAZAAgAAAAMAP//AAAZAAgAAAANAP//AAAZAAgAAAAOAP//AAAZAAgAAAAPAP//AAAZAAgAAAAQAP//AAAZAAgAAAARAP//AAAZAAgAAAASAP//AAAZAAgAAAASAAoAAAAZAAgAAAARAAoAAAAZAAgAAAAQAAoAAAAZAAgAAAAPAAoAAAAZAAgAAAAOAAoAAAAZAAgAAAANAAoAAAAZAAgAAAALAAoAAAAZAAgAAAAMAAoAAAAZAAgAAAAKAAoAAAAZAAgAAAAJAAoAAAAZAAgAAAAIAAoAAAAZAAgAAAAHAAoAAAAZAAgAAAAGAAoAAAAZAAgAAAAFAAoAAAAZAAgAAAAEAAoAAAAZAAgAAAADAAoAAAAZAAgAAAACAAoAAAAZAAgAAAABAAoAAAAZAAgAAAAAAAoAAAAZAAgAAAD//woAAAAZAAgAAAD//wkAAAAZAAgAAAD//wgAAAAZAAgAAAD//wcAAAAZAAgAAAD//wYAAAAZAAgAAAD//wUAAAAZAAgAAAD//wQAAAAZAAgAAAD//wMAAAAZAAgAAAD//wIAAAAZAAgAAAD//wEAAAAZAAgAAAD//wAAAAAZAAgAAAD/////AAAZAAgAAAAEAAkAAAAZAAgAAAAFAAkAAAAZAAgAAAAGAAkAAAAZAAgAAAAHAAkAAAAZAAgAAAAIAAkAAAAZAAgAAAAJAAkAAAAZAAgAAAAKAAkAAAAZAAgAAAALAAkAAAAZAAgAAAAMAAkAAAAZAAgAAAANAAkAAAAZAAgAAAAOAAkAAAAZAAgAAAAPAAkAAAAZAAgAAAAQAAkAAAAZAAgAAAARAAkAAAAZAAgAAAASAAkAAAAZAAgAAAASAAgAAAAZAAgAAAARAAgAAAAZAAgAAAAQAAgAAAAZAAgAAAAPAAgAAAAZAAgAAAAOAAgAAAAZAAgAAAANAAgAAAAZAAgAAAAMAAgAAAAZAAgAAAALAAgAAAAZAAgAAAAKAAgAAAAZAAgAAAAJAAgAAAAZAAgAAAAIAAgAAAAZAAgAAAAHAAgAAAAZAAgAAAAGAAgAAAAZAAgAAAAFAAgAAAAZAAgAAAAEAAgAAAAZAAgAAAARAAcAAAAZAAgAAAARAAYAAAAOAAgAAAARAAUAAAAOAAgAAAARAAMAAAAOAAgAAAARAAQAAAAOAAgAAAASAAcAAAAZAAgAAAASAAYAAAAZAAgAAAASAAUAAAAZAAgAAAASAAQAAAAZAAgAAAASAAMAAAAZAAgAAAABAAcAAAAZAAgAAAACAAcAAAAZAAgAAAADAAcAAAAZAAgAAAAEAAcAAAAZAAgAAAAFAAcAAAAZAAgAAAAGAAcAAAAZAAgAAAAHAAcAAAAZAAgAAAAIAAcAAAAZAAgAAAAJAAcAAAAZAAgAAAAKAAcAAAAZAAgAAAALAAcAAAAZAAgAAAAMAAcAAAAZAAgAAAANAAcAAAAZAAgAAAAOAAcAAAAZAAgAAAAPAAcAAAAZAAgAAAAQAAcAAAAZAAgAAAAQAAYAAAAeAAEAAAAPAAYAAAAaAAAAAAAOAAYAAAAaAAAAAAANAAYAAAAaAAAAAAALAAYAAAAaAAAAAAAMAAYAAAAaAAAAAAAKAAYAAAAaAAAAAAAJAAYAAAAaAAAAAAAIAAYAAAAaAAAAAAAHAAYAAAAaAAAAAAAGAAYAAAAaAAAAAAAFAAYAAAAaAAAAAAAEAAYAAAAaAAAAAAADAAYAAAAaAAAAAAACAAYAAAAaAAAAAAABAAYAAAAgAAEAAAAQAAIAAAAYAAIAAAAQAAMAAAAYAAEAAAAQAAQAAAAYAAMAAAAQAAUAAAAYAAMAAAABAAIAAAAcAAEAAAABAAMAAAAcAAEAAAABAAQAAAAcAAIAAAABAAUAAAAcAAMAAAA=")
+tile_map_data = PackedByteArray("AAAHAAEAAAAaAAsAAAAGAAEAAAAZAAsAAAAFAAEAAAAZAAsAAAAEAAEAAAAZAAsAAAADAAEAAAAZAAsAAAAIAAEAAAAbAAsAAAAJAAEAAAAaAAsAAAAKAAEAAAAaAAsAAAALAAEAAAAaAAsAAAAMAAEAAAAaAAsAAAANAAEAAAAZAAsAAAAOAAEAAAAZAAsAAAAPAAEAAAAaAAsAAAAQAAEAAAAeAAoAAAAQAAAAAAAZAAgAAAAPAAAAAAAZAAgAAAAOAAAAAAAZAAgAAAANAAAAAAAZAAgAAAAMAAAAAAAZAAgAAAALAAAAAAAZAAgAAAAKAAAAAAAZAAgAAAAJAAAAAAAZAAgAAAAIAAAAAAAZAAgAAAAHAAAAAAAZAAgAAAAGAAAAAAAZAAgAAAAFAAAAAAAZAAgAAAAEAAAAAAAZAAgAAAADAAAAAAAZAAgAAAACAAAAAAAZAAgAAAABAAAAAAAZAAgAAAABAAEAAAAgAAoAAAAAAAEAAAAZAAgAAAAAAAYAAAAZAAgAAAAAAAcAAAAZAAgAAAAAAAUAAAAZAAgAAAAAAAQAAAAZAAgAAAAAAAMAAAAZAAgAAAAAAAIAAAAZAAgAAAAAAAAAAAAZAAgAAAACAAEAAAAaAAsAAAACAAgAAAAZAAgAAAAAAAgAAAAZAAgAAAABAAgAAAAZAAgAAAADAAgAAAAZAAgAAAARAAAAAAAZAAgAAAARAAEAAAAZAAgAAAARAAIAAAAZAAgAAAAAAAkAAAAZAAgAAAABAAkAAAAZAAgAAAACAAkAAAAZAAgAAAADAAkAAAAZAAgAAAASAAIAAAAZAAgAAAASAAEAAAAZAAgAAAASAAAAAAAZAAgAAAAAAP//AAAZAAgAAAABAP//AAAZAAgAAAACAP//AAAZAAgAAAADAP//AAAZAAgAAAAEAP//AAAZAAgAAAAFAP//AAAZAAgAAAAGAP//AAAZAAgAAAAHAP//AAAZAAgAAAAIAP//AAAZAAgAAAAJAP//AAAZAAgAAAAKAP//AAAZAAgAAAALAP//AAAZAAgAAAAMAP//AAAZAAgAAAANAP//AAAZAAgAAAAOAP//AAAZAAgAAAAPAP//AAAZAAgAAAAQAP//AAAZAAgAAAARAP//AAAZAAgAAAASAP//AAAZAAgAAAASAAoAAAAZAAgAAAARAAoAAAAZAAgAAAAQAAoAAAAZAAgAAAAPAAoAAAAZAAgAAAAOAAoAAAAZAAgAAAANAAoAAAAZAAgAAAALAAoAAAAZAAgAAAAMAAoAAAAZAAgAAAAKAAoAAAAZAAgAAAAJAAoAAAAZAAgAAAAIAAoAAAAZAAgAAAAHAAoAAAAZAAgAAAAGAAoAAAAZAAgAAAAFAAoAAAAZAAgAAAAEAAoAAAAZAAgAAAADAAoAAAAZAAgAAAACAAoAAAAZAAgAAAABAAoAAAAZAAgAAAAAAAoAAAAZAAgAAAD//woAAAAZAAgAAAD//wkAAAAZAAgAAAD//wgAAAAZAAgAAAD//wcAAAAZAAgAAAD//wYAAAAZAAgAAAD//wUAAAAZAAgAAAD//wQAAAAZAAgAAAD//wMAAAAZAAgAAAD//wIAAAAZAAgAAAD//wEAAAAZAAgAAAD//wAAAAAZAAgAAAD/////AAAZAAgAAAAEAAkAAAAZAAgAAAAFAAkAAAAZAAgAAAAGAAkAAAAZAAgAAAAHAAkAAAAZAAgAAAAIAAkAAAAZAAgAAAAJAAkAAAAZAAgAAAAKAAkAAAAZAAgAAAALAAkAAAAZAAgAAAAMAAkAAAAZAAgAAAANAAkAAAAZAAgAAAAOAAkAAAAZAAgAAAAPAAkAAAAZAAgAAAAQAAkAAAAZAAgAAAARAAkAAAAZAAgAAAASAAkAAAAZAAgAAAASAAgAAAAZAAgAAAARAAgAAAAZAAgAAAAQAAgAAAAZAAgAAAAPAAgAAAAZAAgAAAAOAAgAAAAZAAgAAAANAAgAAAAZAAgAAAAMAAgAAAAZAAgAAAALAAgAAAAZAAgAAAAKAAgAAAAZAAgAAAAJAAgAAAAZAAgAAAAIAAgAAAAZAAgAAAAHAAgAAAAZAAgAAAAGAAgAAAAZAAgAAAAFAAgAAAAZAAgAAAAEAAgAAAAZAAgAAAARAAcAAAAZAAgAAAARAAYAAAAZAAgAAAARAAUAAAAZAAgAAAARAAMAAAAZAAgAAAARAAQAAAAZAAgAAAASAAcAAAAZAAgAAAASAAYAAAAZAAgAAAASAAUAAAAZAAgAAAASAAQAAAAZAAgAAAASAAMAAAAZAAgAAAABAAcAAAAZAAgAAAACAAcAAAAZAAgAAAADAAcAAAAZAAgAAAAEAAcAAAAZAAgAAAAFAAcAAAAZAAgAAAAGAAcAAAAZAAgAAAAHAAcAAAAZAAgAAAAIAAcAAAAZAAgAAAAJAAcAAAAZAAgAAAAKAAcAAAAZAAgAAAAMAAcAAAAZAAgAAAANAAcAAAAZAAgAAAAOAAcAAAAZAAgAAAAPAAcAAAAZAAgAAAAQAAcAAAAZAAgAAAAQAAYAAAAeAAgAAAAPAAYAAAAaAAcAAAAOAAYAAAAbAAcAAAANAAYAAAAaAAcAAAALAAYAAAAbAAcAAAAMAAYAAAAaAAcAAAAKAAYAAAAbAAcAAAAJAAYAAAAZAAcAAAAIAAYAAAAaAAcAAAAHAAYAAAAaAAcAAAAGAAYAAAAaAAcAAAAFAAYAAAAaAAcAAAAEAAYAAAAaAAcAAAADAAYAAAAaAAcAAAACAAYAAAAaAAcAAAABAAYAAAAgAAgAAAABAAIAAAAcAAkAAAABAAMAAAAcAAkAAAABAAQAAAAcAAgAAAABAAUAAAAcAAoAAAAQAAIAAAAYAAoAAAAQAAMAAAAYAAoAAAAQAAQAAAAYAAkAAAAQAAUAAAAYAAgAAAALAAcAAAAZAAgAAAA=")
 tile_set = SubResource("TileSet_xgxfi")
 
 [node name="DayBackground" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(144, 72)
-texture = ExtResource("7_1hf40")
+texture = ExtResource("6_63fij")
+metadata/_edit_lock_ = true
 
-[node name="Dresser" parent="." instance=ExtResource("7_osqx1")]
-position = Vector2(50, 71)
+[node name="Dresser" parent="." instance=ExtResource("7_6a1eu")]
+position = Vector2(53, 71)
 scale = Vector2(0.8, 0.8)
 
-[node name="DarkAlarmClock" parent="." instance=ExtResource("9_md4x4")]
-position = Vector2(61, 76)
-
-[node name="Computer" parent="." instance=ExtResource("10_1hf40")]
-position = Vector2(197, 80)
-
-[node name="DarkLaundryBasket" parent="." instance=ExtResource("11_13yca")]
-position = Vector2(234, 83)
+[node name="Wardrobe" parent="." instance=ExtResource("8_y6qft")]
+visible = false
+position = Vector2(135, 70)
 scale = Vector2(0.8, 0.8)
 
-[node name="CoatHanger" parent="." instance=ExtResource("11_md4x4")]
-position = Vector2(134, 72)
+[node name="DarkAlarmClock" parent="." instance=ExtResource("7_r4t5f")]
+position = Vector2(64, 76)
+
+[node name="Computer" parent="." instance=ExtResource("10_wxeqx")]
+position = Vector2(142, 80)
+
+[node name="DarkLaundryBasket" parent="." instance=ExtResource("9_tlxdu")]
+position = Vector2(246, 83)
 scale = Vector2(0.8, 0.8)
 
-[node name="Chair" parent="." instance=ExtResource("12_1hf40")]
-position = Vector2(214, 80)
-
-[node name="ExitWindow" parent="." instance=ExtResource("12_13yca")]
-position = Vector2(237, 61)
+[node name="CoatHanger" parent="." instance=ExtResource("12_51riq")]
+position = Vector2(204, 71)
 scale = Vector2(0.8, 0.8)
 
-[node name="Player" parent="." node_paths=PackedStringArray("tile_map_layer") instance=ExtResource("4_4ahh4")]
+[node name="Chair" parent="." instance=ExtResource("11_8fqag")]
+position = Vector2(151, 80)
+
+[node name="Poster" parent="." instance=ExtResource("14_3cj6i")]
+position = Vector2(171, 62)
+
+[node name="Player" parent="." node_paths=PackedStringArray("tile_map_layer") instance=ExtResource("15_l1is2")]
 position = Vector2(95, 96)
 jump_power = 150
+distance_interact = 30
 tile_map_layer = NodePath("../Ground")
 
-[node name="UI" parent="." instance=ExtResource("6_yy6i0")]
+[node name="ColorRect" type="ColorRect" parent="."]
 visible = false
+offset_left = -54.0
+offset_top = -52.0
+offset_right = 356.0
+offset_bottom = 207.0
+color = Color(0, 0, 0, 1)
+
+[node name="UI" parent="." instance=ExtResource("17_eeh2q")]
+visible = false
+position = Vector2(140, 78)

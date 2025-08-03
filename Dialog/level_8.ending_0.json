@@ -1,0 +1,24 @@
+{
+	"dialog": [
+		{
+			"important": true,
+			"speed": 1,
+			"text": "Hey is everything okay?"
+		},
+		{
+			"important": true,
+			"speed": 3,
+			"text": "..."
+		},
+		{
+			"important": true,
+			"speed": 1,
+			"text": "Come out when you can."
+		},
+		{
+			"important": true,
+			"speed": 1,
+			"text": "We all miss you."
+		}
+	]
+}

@@ -92,8 +92,6 @@ func next_phrase() -> void:
 	text_label.text = dialog[phrase_num].text
 	text_label.visible_characters = 0
 	while text_label.visible_characters < len(text_label.text):
-		print(len(text_label.text))
-		print(text_label.visible_characters)
 		text_label.visible_characters += 1
 		timer.start()
 		await timer.timeout

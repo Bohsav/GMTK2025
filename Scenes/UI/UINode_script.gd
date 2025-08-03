@@ -22,5 +22,5 @@ func _physics_process(delta):
 			found = true
 			break
 			
-	selectSprite.visible = found
+	selectSprite.visible = found and not GameMaster.is_dialog
 		 

@@ -1829,7 +1829,6 @@ sources/0 = SubResource("TileSetAtlasSource_cyadu")
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_rf6l5")
 nightmare_time = 0.0
-player_running = true
 
 [node name="SequencePlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -1883,9 +1882,6 @@ scale = Vector2(0.8, 0.8)
 
 [node name="Chair" parent="." instance=ExtResource("15_3628d")]
 position = Vector2(208, 80)
-
-[node name="Door" parent="." instance=ExtResource("5_cyadu")]
-position = Vector2(234, 79)
 
 [node name="Player" parent="." node_paths=PackedStringArray("tile_map_layer") instance=ExtResource("2_syshm")]
 position = Vector2(95, 96)

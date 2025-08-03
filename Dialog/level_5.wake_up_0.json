@@ -1,0 +1,9 @@
+{
+	"dialog": [
+		{
+			"important": true,
+			"speed": 2,
+			"text": "I feel something coming..."
+		}
+	]
+}

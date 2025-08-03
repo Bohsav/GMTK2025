@@ -6,7 +6,15 @@
 script/source = "extends ObjectBase
 
 func on_interact() -> void:
-	return
+	if GameMaster.getLevel() == 4:
+		if not PlayerInventory.has(\"key\"):
+			PlayerInventory.add(\"key\")
+			AudioMaster.playSound(\"KeyInCoat\")
+			SignalBus.play_dialog.emit(\"Level_4.coat_hanger_0\")
+	elif GameMaster.getLevel() == 1:
+		SignalBus.play_dialog.emit(\"any.coat_hanger_0\")
+	else:
+		SignalBus.play_dialog.emit(\"level_2.coat_hanger_0\")
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iobnl"]
