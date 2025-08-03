@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:Assets/tenticle.png.import
-uid="uid://v86bwswy3mgr"
+uid="uid://c6olyln1nuosq"
 path="res://.godot/imported/tenticle.png-6b60e88fee8548538f395776dbc991a1.ctex"
-========
-uid="uid://gywmjixtjghs"
-path="res://.godot/imported/death_0.png-22d04b549d494171805311c7169642c8.ctex"
->>>>>>>> 88f1729668dc661d47aab1ecb98a54f2c76c2ca7:Assets/death_0.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:Assets/tenticle.png.import
 source_file="res://Assets/tenticle.png"
 dest_files=["res://.godot/imported/tenticle.png-6b60e88fee8548538f395776dbc991a1.ctex"]
-========
-source_file="res://Assets/death_0.png"
-dest_files=["res://.godot/imported/death_0.png-22d04b549d494171805311c7169642c8.ctex"]
->>>>>>>> 88f1729668dc661d47aab1ecb98a54f2c76c2ca7:Assets/death_0.png.import
 
 [params]
 
