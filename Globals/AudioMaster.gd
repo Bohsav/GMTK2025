@@ -18,7 +18,8 @@ func _init() -> void:
 	soundLibrary.append(SoundEffect.create("Tripping", preload("res://Assets/Audio/tripping.ogg")))
 	soundLibrary.append(SoundEffect.create("Walking", preload("res://Assets/Audio/Walking.ogg")))
 	soundLibrary.append(SoundEffect.create("WindowOpen", preload("res://Assets/Audio/window open.ogg")))
-	
+	soundLibrary.append(SoundEffect.create("WindBlowing", preload("res://Assets/Audio/Wind Blowing.ogg")))
+
 func playSound(name: String) -> void:
 	for sound in soundLibrary:
 		if sound.name == name:

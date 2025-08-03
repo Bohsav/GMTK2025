@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://bn4sdg4xiab6r"]
+[gd_scene load_steps=22 format=4 uid="uid://bn4sdg4xiab6r"]
 
 [ext_resource type="Script" uid="uid://drp21edqukjdu" path="res://LevelRoom.gd" id="1_t74h0"]
 [ext_resource type="PackedScene" uid="uid://bmkq8s4q6jcoa" path="res://Scenes/Objects/ExitObject.tscn" id="2_i4hbv"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bkaffxphhql0u" path="res://Scenes/Objects/Chair.tscn" id="12_33y7k"]
 [ext_resource type="PackedScene" uid="uid://bl0ot8wc67bjx" path="res://Scenes/Objects/Window2.tscn" id="13_khr6i"]
 [ext_resource type="PackedScene" uid="uid://vmv4gypets5r" path="res://Scenes/Objects/LockedExitObject.tscn" id="15_eb4ip"]
+[ext_resource type="FontFile" uid="uid://coccpjjj1v7f8" path="res://Assets/VCR_OSD_MONO_1.001.ttf" id="16_ecora"]
 
 [sub_resource type="Animation" id="Animation_slbhm"]
 length = 0.001
@@ -1780,8 +1781,7 @@ sources/0 = SubResource("TileSetAtlasSource_cyadu")
 
 [node name="Level4" type="Node2D"]
 script = ExtResource("1_t74h0")
-nightmare_time = 30.0
-
+nightmare_time = 0.0
 
 [node name="SequencePlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -1841,3 +1841,13 @@ tile_map_layer = NodePath("../Ground")
 
 [node name="UI" parent="." instance=ExtResource("6_t74h0")]
 visible = false
+
+[node name="Help" type="RichTextLabel" parent="."]
+offset_left = 46.0
+offset_top = 116.0
+offset_right = 247.0
+offset_bottom = 135.0
+theme_override_fonts/normal_font = ExtResource("16_ecora")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+horizontal_alignment = 1

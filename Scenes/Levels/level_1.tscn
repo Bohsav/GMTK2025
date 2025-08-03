@@ -1839,6 +1839,9 @@ autoplay = "wake_up"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
+[node name="Door" parent="." instance=ExtResource("5_cyadu")]
+position = Vector2(234, 79)
+
 [node name="Bed" parent="." instance=ExtResource("4_xgxfi")]
 position = Vector2(92, 85)
 
@@ -1884,13 +1887,10 @@ scale = Vector2(0.8, 0.8)
 [node name="Chair" parent="." instance=ExtResource("15_3628d")]
 position = Vector2(208, 80)
 
-[node name="Door" parent="." instance=ExtResource("5_cyadu")]
-position = Vector2(234, 79)
-
-
 [node name="Player" parent="." node_paths=PackedStringArray("tile_map_layer") instance=ExtResource("2_syshm")]
 position = Vector2(95, 96)
 jump_power = 150
+distance_interact = 30
 tile_map_layer = NodePath("../Ground")
 
 [node name="Help" type="RichTextLabel" parent="."]
