@@ -35,7 +35,7 @@ animations = [{
 
 [node name="WallMonster" type="Node2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="Area2D" parent="."]
 script = ExtResource("1_k8g0y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
@@ -47,3 +47,5 @@ sprite_frames = SubResource("SpriteFrames_50gxa")
 animation = &"WallMonster"
 autoplay = "WallMonster"
 frame_progress = 0.0927148
+
+[connection signal="body_entered" from="StaticBody2D" to="StaticBody2D" method="_on_body_entered"]

@@ -2,8 +2,8 @@
 	"dialog": [
 		{
 			"important": true,
-			"speed": 2,
-			"text": "..."
+			"speed": 1,
+			"text": "This should be full."
 		}
 	]
 }

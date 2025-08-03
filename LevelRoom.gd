@@ -37,4 +37,3 @@ func _process(delta: float) -> void:
 	
 func start_nightmares() -> void:
 	nightmare_run = true
-	
