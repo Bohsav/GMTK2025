@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://chwsjlpt7175b"]
+
+[ext_resource type="Script" uid="uid://cfpb4a620mpfn" path="res://Globals/AudioMaster.gd" id="1_vyeag"]
+
+[node name="AudioMaster" type="AudioStreamPlayer"]
+script = ExtResource("1_vyeag")

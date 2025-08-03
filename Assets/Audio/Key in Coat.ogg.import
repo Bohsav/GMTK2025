@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://byshl1ho6urmc"
+path="res://.godot/imported/Key in Coat.ogg-f952e09622012489b94df3d6d8d2b27e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Key in Coat.ogg"
+dest_files=["res://.godot/imported/Key in Coat.ogg-f952e09622012489b94df3d6d8d2b27e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
