@@ -10,6 +10,8 @@ var level_3 := "uid://cb277sum4bv3r"
 var level_4 := "uid://bn4sdg4xiab6r"
 var level_5 := "uid://hcbminqtn4l4"
 var level_6 := "uid://cwjadpaoywpom"
+var level_7 := "uid://xarfhkpvt20n"
+var level_8 := ""
 var credits := "uid://dhkuud6bdi0xj"
 var main_menu := "uid://dikc2krvceeil"
 
@@ -62,6 +64,8 @@ func get_level_by_level_count(value: int) -> String:
 		4: packedscene = level_4
 		5: packedscene = level_5
 		6: packedscene = level_6
+		7: packedscene = level_7
+		8: packedscene = level_8
 		_: packedscene = level_0
 	return packedscene
 
