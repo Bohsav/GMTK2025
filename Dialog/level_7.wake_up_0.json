@@ -1,0 +1,9 @@
+{
+	"dialog": [
+		{
+			"important": true,
+			"speed": 2,
+			"text": "I can't move?!"
+		}
+	]
+}

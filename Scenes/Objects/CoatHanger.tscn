@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c36ton7cf5jet"]
 
-[ext_resource type="Texture2D" uid="uid://ct4dn3w4tu2ya" path="res://Assets/Object/Dark_Coat_hanger.png" id="1_lpmbk"]
+[ext_resource type="Texture2D" uid="uid://bvy0ne2mh7r3o" path="res://Assets/Object/Coay_hanger-export.png" id="1_lpmbk"]
 
 [sub_resource type="GDScript" id="GDScript_nic05"]
 script/source = "extends ObjectBase

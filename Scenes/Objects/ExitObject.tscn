@@ -1,17 +1,42 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmkq8s4q6jcoa"]
+[gd_scene load_steps=10 format=3 uid="uid://bmkq8s4q6jcoa"]
 
 [ext_resource type="Script" uid="uid://tn7f0e5ii4ex" path="res://Scenes/Objects/ExitObject_script.gd" id="1_33m1g"]
-[ext_resource type="Texture2D" uid="uid://co3bs72ejmgtp" path="res://Assets/Object/door.png" id="2_s6x0n"]
+[ext_resource type="Texture2D" uid="uid://dwfajk21yb32j" path="res://Assets/Object/dark_door_0.png" id="3_m68kh"]
+[ext_resource type="Texture2D" uid="uid://b2q1g8obtrfgk" path="res://Assets/Object/dark_door_1.png" id="4_eovk2"]
+[ext_resource type="Texture2D" uid="uid://b1qfp6rt3jych" path="res://Assets/Object/dark_door_2.png" id="5_f5t46"]
+[ext_resource type="Texture2D" uid="uid://u4nlvcsc03gi" path="res://Assets/Object/day_door_0.png" id="6_f5t46"]
+[ext_resource type="Texture2D" uid="uid://dcnn1js18h1bu" path="res://Assets/Object/day_door_1.png" id="7_u4uju"]
+[ext_resource type="Texture2D" uid="uid://b6w0uo7hcn23c" path="res://Assets/Object/day_door_2.png" id="8_tjeoc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_33m1g"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_s6x0n")
+"texture": ExtResource("3_m68kh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_eovk2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_f5t46")
 }],
-"loop": true,
-"name": &"default",
-"speed": 5.0
+"loop": false,
+"name": &"dark_door_open",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_f5t46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_u4uju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_tjeoc")
+}],
+"loop": false,
+"name": &"day_door_open",
+"speed": 2.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s6x0n"]
@@ -23,6 +48,7 @@ script = ExtResource("1_33m1g")
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -0.5)
 sprite_frames = SubResource("SpriteFrames_33m1g")
+animation = &"day_door_open"
 
 [node name="Area2D" type="Area2D" parent="."]
 

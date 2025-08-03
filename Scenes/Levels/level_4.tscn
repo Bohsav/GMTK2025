@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://bn4sdg4xiab6r"]
+[gd_scene load_steps=22 format=4 uid="uid://bn4sdg4xiab6r"]
 
 [ext_resource type="Script" uid="uid://drp21edqukjdu" path="res://LevelRoom.gd" id="1_t74h0"]
 [ext_resource type="PackedScene" uid="uid://bmkq8s4q6jcoa" path="res://Scenes/Objects/ExitObject.tscn" id="2_i4hbv"]
@@ -10,11 +10,12 @@
 [ext_resource type="PackedScene" uid="uid://cypq1v75y1enu" path="res://Scenes/Objects/Dresser.tscn" id="7_i5g5g"]
 [ext_resource type="PackedScene" uid="uid://b5ide62glwjs" path="res://Scenes/Objects/AlarmClock.tscn" id="8_3osng"]
 [ext_resource type="PackedScene" uid="uid://bogyg0tb6kf3n" path="res://Scenes/Objects/Computer.tscn" id="9_eb4ip"]
-[ext_resource type="PackedScene" uid="uid://kn27vsabikbe" path="res://Scenes/Objects/DarkLaundryBasket.tscn" id="10_ecora"]
+[ext_resource type="PackedScene" uid="uid://2jnrenkrd6r5" path="res://Scenes/Objects/Wardrobe.tscn" id="11_eb4ip"]
 [ext_resource type="PackedScene" uid="uid://c36ton7cf5jet" path="res://Scenes/Objects/CoatHanger.tscn" id="11_xpmn3"]
 [ext_resource type="PackedScene" uid="uid://bkaffxphhql0u" path="res://Scenes/Objects/Chair.tscn" id="12_33y7k"]
 [ext_resource type="PackedScene" uid="uid://bl0ot8wc67bjx" path="res://Scenes/Objects/Window2.tscn" id="13_khr6i"]
 [ext_resource type="PackedScene" uid="uid://vmv4gypets5r" path="res://Scenes/Objects/LockedExitObject.tscn" id="15_eb4ip"]
+[ext_resource type="FontFile" uid="uid://coccpjjj1v7f8" path="res://Assets/VCR_OSD_MONO_1.001.ttf" id="16_ecora"]
 
 [sub_resource type="Animation" id="Animation_slbhm"]
 length = 0.001
@@ -1782,7 +1783,6 @@ sources/0 = SubResource("TileSetAtlasSource_cyadu")
 script = ExtResource("1_t74h0")
 nightmare_time = 30.0
 
-
 [node name="SequencePlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_3osng")
@@ -1814,18 +1814,17 @@ scale = Vector2(0.8, 0.8)
 position = Vector2(61, 76)
 
 [node name="Computer" parent="." instance=ExtResource("9_eb4ip")]
-position = Vector2(197, 80)
-
-[node name="DarkLaundryBasket" parent="." instance=ExtResource("10_ecora")]
-position = Vector2(164, 83)
-scale = Vector2(0.8, 0.8)
+position = Vector2(201, 80)
 
 [node name="CoatHanger" parent="." instance=ExtResource("11_xpmn3")]
-position = Vector2(139, 72)
+position = Vector2(129, 72)
 scale = Vector2(0.8, 0.8)
 
 [node name="Chair" parent="." instance=ExtResource("12_33y7k")]
-position = Vector2(208, 80)
+position = Vector2(211, 80)
+
+[node name="Wardrobe" parent="." instance=ExtResource("11_eb4ip")]
+position = Vector2(163, 64)
 
 [node name="Window2" parent="." instance=ExtResource("13_khr6i")]
 position = Vector2(98, 57)
@@ -1841,3 +1840,13 @@ tile_map_layer = NodePath("../Ground")
 
 [node name="UI" parent="." instance=ExtResource("6_t74h0")]
 visible = false
+
+[node name="Help" type="RichTextLabel" parent="."]
+offset_left = 46.0
+offset_top = 116.0
+offset_right = 247.0
+offset_bottom = 135.0
+theme_override_fonts/normal_font = ExtResource("16_ecora")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+horizontal_alignment = 1

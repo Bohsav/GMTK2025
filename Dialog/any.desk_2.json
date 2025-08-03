@@ -1,0 +1,9 @@
+q{
+	"dialog": [
+		{
+			"important": true,
+			"speed": 1,
+			"text": "Do I have an assignment due tomorrow?"
+		}
+	]
+}
