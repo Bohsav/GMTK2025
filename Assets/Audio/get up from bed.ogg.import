@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dbpxl5b8rb1rs"
+path="res://.godot/imported/get up from bed.ogg-4d8f4212bb1549c0c4abe16a021284cb.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/get up from bed.ogg"
+dest_files=["res://.godot/imported/get up from bed.ogg-4d8f4212bb1549c0c4abe16a021284cb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

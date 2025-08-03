@@ -42,8 +42,13 @@ func _process(delta: float) -> void:
 			current_scene = ResourceLoader.load_threaded_get(loading_scene)
 	
 func level_end(object: Object) -> void:
+	restart_systems()
 	level_count = level_count + 1
 	loadLevel(get_level_by_level_count(level_count))
+	
+func restart_systems() -> void:
+	AudioMaster.stop()
+	PlayerInventory.clearInventory()
 	
 func player_death() -> void:
 	player_retries = player_retries + 1

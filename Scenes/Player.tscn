@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://lsjg54jifttk"]
+[gd_scene load_steps=36 format=3 uid="uid://lsjg54jifttk"]
 
 [ext_resource type="Script" uid="uid://cr1x03aym8sob" path="res://Scenes/Player.gd" id="1_s0eop"]
 [ext_resource type="PackedScene" uid="uid://bjjmbb5cj4oaw" path="res://Scenes/Modules/Player/CharacterMovementModule.tscn" id="2_ft8w5"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bdfphhvinuypa" path="res://Scenes/Modules/GravityModule.tscn" id="3_jmcll"]
 [ext_resource type="PackedScene" uid="uid://csrh10xtccq6k" path="res://Assets/Test/PlayerSprites.tscn" id="5_jmcll"]
 [ext_resource type="Texture2D" uid="uid://ceslwv1h2ek3g" path="res://Assets/dust_particle.png" id="6_nn08x"]
-[ext_resource type="Texture2D" uid="uid://gywmjixtjghs" path="res://Assets/death_0.png" id="7_c43xd"]
+[ext_resource type="Texture2D" uid="uid://boc1vestyi3y4" path="res://Assets/death_0.png" id="7_c43xd"]
 [ext_resource type="Texture2D" uid="uid://cfteos5bwo1a" path="res://Assets/Player/run_0.png" id="7_ksbbd"]
 [ext_resource type="Texture2D" uid="uid://4bnvji3lq060" path="res://Assets/Player/jump_0.png" id="7_miouo"]
 [ext_resource type="Texture2D" uid="uid://bi3ch6eprmd5h" path="res://Assets/Player/Idle_0.png" id="7_x63xi"]
@@ -25,6 +25,8 @@
 [ext_resource type="Texture2D" uid="uid://kaxv22288abg" path="res://Assets/Player/wake_up_2.png" id="16_5v66d"]
 [ext_resource type="Texture2D" uid="uid://s28qn81x0vs3" path="res://Assets/Player/wake_up_3.png" id="17_x63xi"]
 [ext_resource type="Texture2D" uid="uid://bwfyfvudy8ugu" path="res://Assets/Player/wake_up_4.png" id="18_i2e8t"]
+[ext_resource type="Texture2D" uid="uid://bsvt31qwyddo7" path="res://Assets/Player/trip_0.png" id="20_c43xd"]
+[ext_resource type="Texture2D" uid="uid://bgmyjxgrhejkl" path="res://Assets/Player/trip_1.png" id="21_avx33"]
 [ext_resource type="Texture2D" uid="uid://0i06qq0qlwhd" path="res://Assets/Player/walk2_0.png" id="26_lyrkg"]
 [ext_resource type="Texture2D" uid="uid://bj3etie730ij8" path="res://Assets/Player/walk2_1.png" id="27_c43xd"]
 [ext_resource type="Texture2D" uid="uid://0kvwvqpicvd" path="res://Assets/Player/walk2_2.png" id="28_avx33"]
@@ -109,6 +111,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("20_c43xd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_avx33")
+}],
+"loop": false,
+"name": &"trip",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("14_1iu4k")
 }, {
 "duration": 1.0,
@@ -155,6 +168,8 @@ height = 28.0
 [node name="Player" type="Node2D"]
 script = ExtResource("1_s0eop")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [node name="GravityModule" parent="." instance=ExtResource("3_jmcll")]
 
 [node name="MovementModule" parent="." instance=ExtResource("2_ft8w5")]
@@ -184,7 +199,8 @@ color_ramp = SubResource("Gradient_52ee3")
 [node name="PlayerSprites" parent="PlayerBody" instance=ExtResource("5_jmcll")]
 position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_bhhdu")
-animation = &"idle"
+animation = &"walk"
+frame_progress = 0.592808
 speed_scale = 1.1
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="PlayerBody"]

@@ -1,0 +1,9 @@
+{
+	"dialog": [
+		{
+			"important": true,
+			"speed": 1,
+			"text": "This should be full"
+		}
+	]
+}
