@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://derf86tiok1mx"
+path="res://.godot/imported/Jump Landing.ogg-ca4373a524fd4a7f9d37300993a01d3c.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Jump Landing.ogg"
+dest_files=["res://.godot/imported/Jump Landing.ogg-ca4373a524fd4a7f9d37300993a01d3c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

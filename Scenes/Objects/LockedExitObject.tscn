@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://vmv4gypets5r"]
+
+[ext_resource type="Script" uid="uid://7dydmbuo17wq" path="res://Scenes/Objects/LockedExitObject_script.gd" id="1_31ccw"]
+[ext_resource type="Texture2D" uid="uid://d4inp8sws707y" path="res://Assets/Object/Dark_door_locked.png" id="2_31ccw"]
+[ext_resource type="Texture2D" uid="uid://dx0bj3r5itbt0" path="res://Assets/Object/door_locked.png" id="3_4o74y"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_33m1g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_31ccw")
+}],
+"loop": true,
+"name": &"dark",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4o74y")
+}],
+"loop": true,
+"name": &"day",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s6x0n"]
+size = Vector2(22, 35)
+
+[node name="LockedDoor" type="Node2D"]
+script = ExtResource("1_31ccw")
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -0.5)
+sprite_frames = SubResource("SpriteFrames_33m1g")
+animation = &"dark"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_s6x0n")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

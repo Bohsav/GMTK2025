@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://bl0ot8wc67bjx"]
+[gd_scene load_steps=4 format=3 uid="uid://bl0ot8wc67bjx"]
 
 [ext_resource type="Texture2D" uid="uid://cyydtmex8ocxg" path="res://Assets/Object/window_2.png" id="1_eretk"]
-[ext_resource type="Shader" uid="uid://dxo4hf2d3ykmp" path="res://Assets/Shaders/BloomWindow2Shader.gdshader" id="2_ywkx6"]
 
 [sub_resource type="GDScript" id="GDScript_nic05"]
 script/source = "extends ObjectBase
@@ -10,34 +9,6 @@ func on_interact() -> void:
 	print(\"hai\")
 	return
 "
-
-[sub_resource type="Gradient" id="Gradient_y7ohf"]
-offsets = PackedFloat32Array(0, 0.571429, 1)
-colors = PackedColorArray(1, 0.8, 0.2, 1, 1, 0.913725, 0.658824, 0, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_3fc40"]
-gradient = SubResource("Gradient_y7ohf")
-fill = 1
-fill_from = Vector2(0.637615, 0.655963)
-fill_to = Vector2(0.463303, 0.43578)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ywkx6"]
-shader = ExtResource("2_ywkx6")
-shader_parameter/glow_size = 0.003
-shader_parameter/glow_colour = Color(1, 0.8, 0.2, 1)
-shader_parameter/color_intensity = 0.07
-shader_parameter/glow_intensity = 0.05
-shader_parameter/glow_threshold = 0.0
-
-[sub_resource type="Gradient" id="Gradient_ywkx6"]
-interpolation_mode = 2
-colors = PackedColorArray(1, 0.8, 0.2, 0.360784, 1, 0.901961, 0.34902, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_y7ohf"]
-gradient = SubResource("Gradient_ywkx6")
-fill = 1
-fill_from = Vector2(0.541284, 0.518349)
-fill_to = Vector2(0.743119, 0.183486)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iobnl"]
 size = Vector2(41, 35)
@@ -48,39 +19,9 @@ script = SubResource("GDScript_nic05")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_eretk")
 
-[node name="TextureRect" type="TextureRect" parent="Sprite2D"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -33.0
-offset_top = -32.0
-offset_right = -33.0
-offset_bottom = -32.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("GradientTexture2D_3fc40")
-
-[node name="ColorRect" type="ColorRect" parent="Sprite2D"]
-material = SubResource("ShaderMaterial_ywkx6")
-offset_left = -2.0
-offset_right = 16.0
-offset_bottom = 18.0
-
-[node name="TextureRect2" type="TextureRect" parent="Sprite2D"]
-offset_left = -80.0
-offset_top = -45.0
-offset_right = 82.0
-offset_bottom = 57.0
-texture = SubResource("GradientTexture2D_y7ohf")
-
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Sprite2D/TextureRect2"]
-energy = 0.1
-blend_mode = 2
-
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
 position = Vector2(-2.5, 1.5)
 shape = SubResource("RectangleShape2D_iobnl")
 
