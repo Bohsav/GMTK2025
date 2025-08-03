@@ -47,3 +47,4 @@ scale = Vector2(2.97049, 2.97049)
 sprite_frames = SubResource("SpriteFrames_uddis")
 animation = &"corner_rabbit"
 autoplay = "corner_rabbit"
+frame_progress = 0.633474

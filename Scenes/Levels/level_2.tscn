@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://lsjg54jifttk" path="res://Scenes/Player.tscn" id="4_blpqv"]
 [ext_resource type="Texture2D" uid="uid://cr8r4qp3v6uoe" path="res://Assets/timesets.png" id="5_1jlnc"]
 [ext_resource type="PackedScene" uid="uid://cyo6b2hmixn36" path="res://Scenes/UI/UINode.tscn" id="6_8qsmg"]
-[ext_resource type="Shader" uid="uid://bxcs61y7412th" path="res://Assets/Shaders/Vignette.gdshader" id="6_u40f0"]
 
 [sub_resource type="Animation" id="Animation_0x4y1"]
 length = 0.001

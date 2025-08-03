@@ -1,16 +1,14 @@
-[gd_scene load_steps=14 format=4 uid="uid://dyltwnfekx7mr"]
+[gd_scene load_steps=15 format=4 uid="uid://dyltwnfekx7mr"]
 
 [ext_resource type="Script" uid="uid://drp21edqukjdu" path="res://LevelRoom.gd" id="1_rf6l5"]
 [ext_resource type="PackedScene" uid="uid://lsjg54jifttk" path="res://Scenes/Player.tscn" id="2_syshm"]
 [ext_resource type="Texture2D" uid="uid://cr8r4qp3v6uoe" path="res://Assets/timesets.png" id="4_iixi8"]
 [ext_resource type="PackedScene" uid="uid://wkebjf1d8chi" path="res://Scenes/Objects/Bed.tscn" id="4_xgxfi"]
 [ext_resource type="PackedScene" uid="uid://bmkq8s4q6jcoa" path="res://Scenes/Objects/ExitObject.tscn" id="5_cyadu"]
-[ext_resource type="PackedScene" uid="uid://bl0ot8wc67bjx" path="res://Scenes/Objects/Window.tscn" id="7_5f3p6"]
-[ext_resource type="PackedScene" uid="uid://cyo6b2hmixn36" path="res://Scenes/UI/UINode.tscn" id="7_jv26f"]
-[ext_resource type="Texture2D" uid="uid://bql8xj78t1e1u" path="res://Assets/Day_Background.png" id="14_k2mw1"]
-[ext_resource type="Shader" uid="uid://bxcs62y7412th" path="res://Assets/Shaders/Vignette.gdshader" id="6_5f3p6"]
-[ext_resource type="PackedScene" uid="uid://dy0vm22q3gca8" path="res://Scenes/UI/DialogBox.tscn" id="6_jv26f"]
 [ext_resource type="PackedScene" uid="uid://bl0ot8wc67bjx" path="res://Scenes/Objects/Window2.tscn" id="7_5f3p6"]
+[ext_resource type="PackedScene" uid="uid://cyo6b2hmixn36" path="res://Scenes/UI/UINode.tscn" id="7_jv26f"]
+[ext_resource type="PackedScene" uid="uid://dsvoimgno1vxx" path="res://Scenes/Objects/WallMonster.tscn" id="9_rb0md"]
+[ext_resource type="Texture2D" uid="uid://bql8xj78t1e1u" path="res://Assets/Day_Background.png" id="14_k2mw1"]
 
 [sub_resource type="Animation" id="Animation_5f3p6"]
 length = 0.001
@@ -1852,3 +1850,6 @@ position = Vector2(140, 78)
 z_index = -1
 position = Vector2(144, 72)
 texture = ExtResource("14_k2mw1")
+
+[node name="WallMonster" parent="." instance=ExtResource("9_rb0md")]
+position = Vector2(-113, 63)

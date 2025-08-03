@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dikc2krvceeil"]
+[gd_scene load_steps=17 format=3 uid="uid://dikc2krvceeil"]
 
 [ext_resource type="Script" uid="uid://80uilknjrrus" path="res://Scenes/UI/MainMenu_script.gd" id="1_g18y6"]
 [ext_resource type="Texture2D" uid="uid://jac3j42cvxbs" path="res://Assets/UI/Dialog_4.png" id="2_72sra"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://ckc1abp0v1kjq" path="res://Scenes/UI/cloud_1.tscn" id="3_ynupv"]
 [ext_resource type="PackedScene" uid="uid://dysj5c8nhjxal" path="res://Scenes/UI/cloud.tscn" id="4_m48tj"]
 [ext_resource type="PackedScene" uid="uid://cinin7rxi5r7d" path="res://Scenes/UI/corner_rabbit.tscn" id="8_dvisc"]
-[ext_resource type="PackedScene" uid="uid://disimcnq3i6wf" path="res://Scenes/UI/eye_blinking.tscn" id="9_ynupv"]
 [ext_resource type="Texture2D" uid="uid://bhtual6duat0q" path="res://Assets/UI/white border.png" id="25_4b2gn"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ynupv"]
@@ -102,11 +101,6 @@ texture = ExtResource("25_4b2gn")
 
 [node name="CornerRabbit" parent="." instance=ExtResource("8_dvisc")]
 position = Vector2(706, 648)
-
-[node name="Blinking" parent="." instance=ExtResource("9_ynupv")]
-position = Vector2(576.5, 324.5)
-scale = Vector2(3.99653, 4.00617)
-speed_scale = 0.5
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
