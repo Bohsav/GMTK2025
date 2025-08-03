@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dhkuud6bdi0xj"]
+[gd_scene load_steps=41 format=3 uid="uid://dhkuud6bdi0xj"]
 
 [ext_resource type="Script" uid="uid://rkmbfb4fo2ca" path="res://Scenes/UI/Credits_script.gd" id="1_awgux"]
 [ext_resource type="Texture2D" uid="uid://dy1o0n3ty45rk" path="res://Assets/Sprites/SpriteFrames/cloud2/tile000.png" id="1_ihxic"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://cmgetcfeqg3gp" path="res://Assets/Sprites/SpriteFrames/cloud/tile005.png" id="20_j5f4l"]
 [ext_resource type="Texture2D" uid="uid://bacy268rysde0" path="res://Assets/Sprites/SpriteFrames/cloud/tile006.png" id="21_paf2n"]
 [ext_resource type="Texture2D" uid="uid://jac3j42cvxbs" path="res://Assets/UI/Dialog_4.png" id="22_bp1kb"]
+[ext_resource type="Texture2D" uid="uid://ckk04c0h6k4ry" path="res://Assets/UI/Dialog_5.png" id="23_40xdw"]
 [ext_resource type="Texture2D" uid="uid://bhtual6duat0q" path="res://Assets/UI/white border.png" id="23_p47v7"]
 [ext_resource type="Texture2D" uid="uid://c7nu8arr3b602" path="res://Assets/Sprites/SpriteFrames/corner_rabbit/tile000.png" id="24_i7ofd"]
 [ext_resource type="Texture2D" uid="uid://c5m7wkrka62mf" path="res://Assets/Sprites/SpriteFrames/corner_rabbit/tile001.png" id="25_53ydh"]
@@ -118,14 +119,16 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2hae6"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pypce"]
-texture = ExtResource("22_bp1kb")
+texture = ExtResource("23_40xdw")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yoxxm"]
-texture = ExtResource("22_bp1kb")
+texture = ExtResource("23_40xdw")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hsi0g"]
-texture = ExtResource("22_bp1kb")
+texture = ExtResource("23_40xdw")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cgo6a"]
 texture = ExtResource("22_bp1kb")
@@ -198,6 +201,7 @@ offset_left = 43.0
 offset_top = 554.0
 offset_right = 214.0
 offset_bottom = 610.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2hae6")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_pypce")
 theme_override_styles/hover = SubResource("StyleBoxTexture_yoxxm")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_hsi0g")
@@ -223,13 +227,13 @@ offset_top = 69.0
 offset_right = 565.0
 offset_bottom = 533.0
 theme_override_font_sizes/normal_font_size = 20
-text = "Thomas Tam - Game Director / Lead Designer
+text = "Thomas Tam - Director / Lead Designer
 
 
 Sunnyteddy - Lead Artist
 
 
-Pippa Painter - Lead Artist
+Pippa Painter - Artist
 
 
 Esther Lee - Artist"
@@ -243,18 +247,15 @@ theme_override_font_sizes/normal_font_size = 20
 text = "Brilliant Nguyen - Lead Programmer / Art Director
 
 
-Isaac Lee - Programmer
-
-
 Ky Nguyen - Programmer
 
 
 Bohdan Savchuk - Programmer
 
 
-Isaac Shoebottom - Programmer
+Isaac Lee - Programmer
 
 
-"
+Isaac Shoebottom - Programmer"
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
