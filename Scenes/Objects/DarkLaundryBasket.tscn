@@ -6,7 +6,7 @@
 script/source = "extends ObjectBase
 
 func on_interact() -> void:
-	return
+	SignalBus.play_dialog.emit(\"any.laundry_basket\")
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iobnl"]

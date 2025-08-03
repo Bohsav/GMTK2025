@@ -6,7 +6,10 @@
 script/source = "extends ObjectBase
 
 func on_interact() -> void:
-	return
+	if randi() % 2 == 0:
+		SignalBus.play_dialog.emit(\"any.bookcase_1\")
+	else:
+		SignalBus.play_dialog.emit(\"any.bookcase_2\")
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iobnl"]
